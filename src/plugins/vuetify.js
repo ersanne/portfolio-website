@@ -4,4 +4,14 @@ import Vuetify from 'vuetify/lib';
 Vue.use(Vuetify);
 
 export default new Vuetify({
+    theme: {
+        themes: {
+            dark: {
+                primary: '#f44336',
+                secondary: '#36e7f4',
+                accent: '#f43688'
+            }
+        },
+        dark: true
+    }
 });

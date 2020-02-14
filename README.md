@@ -1,5 +1,7 @@
 # ersanne.github.io
 
+![](https://travis-ci.com/ersanne/eriksanne-portfolio.svg?branch=master)
+
 ## Project setup
 ```
 yarn install
