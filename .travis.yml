@@ -12,5 +12,6 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: dist
   repo: ersanne/ersanne.github.io
+  target_branch: master
   on:
     branch: master
