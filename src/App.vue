@@ -5,43 +5,8 @@
             <v-container fluid>
                 <RouterView></RouterView>
             </v-container>
-            <v-speed-dial
-                    fab
-                    v-model="fab"
-                    bottom
-                    left
-                    direction="bottom"
-                    open-on-hover
-                    transition="slide-y-transition"
-                    absolute
-            >
-                <template v-slot:activator>
-                    <v-btn
-                            v-model="fab"
-                    >
-                        Contact Me
-                    </v-btn>
-                </template>
-                <div class="text-left">
-                    <v-btn
-                    >
-                        <v-icon>mdi-linkedin</v-icon>
-                    </v-btn>
-                    <v-btn
-                    >
-                        <v-icon>mdi-linkedin</v-icon>
-                    </v-btn>
-                    <v-btn
-                    >
-                        <v-icon>mdi-linkedin</v-icon>
-                    </v-btn>
-                    <v-btn
-                    >
-                        <v-icon>mdi-linkedin</v-icon>
-                    </v-btn>
-                </div>
-            </v-speed-dial>
         </v-content>
+        <Footer></Footer>
         <BottomNav class="hidden-md-and-up"></BottomNav>
     </v-app>
 </template>
@@ -51,11 +16,13 @@
 
     import BottomNav from "@/components/nav/BottomNav";
     import AppBar from "@/components/nav/AppBar";
+    import Footer from "@/components/Footer";
 
     export default {
         name: 'App',
 
         components: {
+            Footer,
             AppBar,
             BottomNav
         },
