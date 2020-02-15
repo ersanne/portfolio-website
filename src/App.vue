@@ -2,9 +2,7 @@
     <v-app>
         <AppBar></AppBar>
         <v-content>
-            <v-container fluid>
-                <RouterView></RouterView>
-            </v-container>
+            <RouterView></RouterView>
         </v-content>
         <Footer></Footer>
         <BottomNav class="hidden-md-and-up"></BottomNav>

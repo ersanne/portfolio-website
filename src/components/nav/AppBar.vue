@@ -1,6 +1,7 @@
 <template>
     <v-app-bar
             app
+            color="appbar"
     >
         <div class="d-flex align-center">
             <v-img
@@ -14,17 +15,21 @@
         </div>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-            <v-btn>
+            <v-btn flat>
                 Home
             </v-btn>
             <v-btn
             >
-                Portfolio
+                Projects
             </v-btn>
             <v-btn
             >
                 Blog
             </v-btn>
+            <v-switch
+                    v-model="$vuetify.theme.dark"
+                    label="Dark Theme"
+            ></v-switch>
         </v-toolbar-items>
     </v-app-bar>
 </template>

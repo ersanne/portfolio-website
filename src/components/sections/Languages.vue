@@ -4,7 +4,7 @@
             <v-flex xs12 sm6 md5 class="px-4">
                 <div v-for="item in items" :key="item.text" class="mb-4">
                     <v-layout align-center fill-height>
-                        <v-img max-height="20px" max-width="24px" contain :src="`flags/${item.flag}`"></v-img>
+                        <v-img max-height="20px" max-width="24px" contain :src="`img/flags/${item.flag}`"></v-img>
                         <div class="subheading blue-grey--text text--darken-3 pl-1" v-text="item.text"></div>
                         <v-spacer></v-spacer>
                         <div class="caption blue-grey--text text--darken-2" v-text="item.level_text"></div>

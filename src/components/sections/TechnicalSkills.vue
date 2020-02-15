@@ -1,32 +1,18 @@
 <template>
-    <SectionLayout id="skills" title="Skills">
+    <SectionLayout id="technical_skills" title="Technical Skills">
         <v-layout wrap>
             <v-flex xs12 sm6 class="px-4" v-for="(groups, i) in bar_items" :key="i">
                 <div v-for="item in groups" :key="item.text" class="mb-4">
                     <v-layout align-center fill-height>
                         <v-icon :color="item.color" v-text="`${item.icon}`" class="mr-2"></v-icon>
-                        <div class="subheading blue-grey--text text--darken-3" v-text="item.text"></div>
+                        <div class="subheading text--darken-3" v-text="item.text"></div>
                         <v-spacer></v-spacer>
-                        <div class="caption blue-grey--text text--darken-2" v-text="item.level_text"></div>
+                        <div class="caption text--darken-2" v-text="item.level_text"></div>
                     </v-layout>
                     <v-progress-linear class="my-1" readonly height="8" :value="item.value"
                                        :color="item.color"></v-progress-linear>
                 </div>
             </v-flex>
-            <v-layout class="px-4 hidden-xs-only">
-                <v-flex pa-1 shrink v-for="item in bullet_items" :key="item.text" class="mb-4">
-                    <v-card :color="item.color" dark>
-                        <v-card-text class="subheading" v-text="item.text"></v-card-text>
-                    </v-card>
-                </v-flex>
-            </v-layout>
-            <v-layout wrap class="px-4 hidden-sm-and-up">
-                <v-flex pa-1 shrink v-for="item in bullet_items" :key="item.text" class="mb-4">
-                    <v-card :color="item.color" dark>
-                        <v-card-text class="subheading" v-text="item.text"></v-card-text>
-                    </v-card>
-                </v-flex>
-            </v-layout>
         </v-layout>
     </SectionLayout>
 </template>
@@ -114,24 +100,6 @@
                     }
                 ]
             ],
-            bullet_items: [
-                {
-                    text: 'Able to work independently or as part of a wider team',
-                    color: 'blue'
-                },
-                {
-                    text: 'Proficiency in Microsoft Office',
-                    color: 'orange'
-                },
-                {
-                    text: 'Experience with both Agile and Waterfall methodologies',
-                    color: 'green lighten-1'
-                },
-                {
-                    text: 'Excellent problem solver',
-                    color: 'yellow darken-1'
-                }
-            ]
         }),
     }
 </script>

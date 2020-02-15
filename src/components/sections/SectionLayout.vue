@@ -1,14 +1,11 @@
 <template>
-    <section>
+    <section :class="this.$vuetify.theme.dark ? 'dark-section' : 'light-section'">
         <v-container>
-            <v-card>
-                <v-card-title>
-                    {{title}}
-                </v-card-title>
-                <v-card-text>
-                    <slot></slot>
-                </v-card-text>
-            </v-card>
+            <h2 class="text-center py-5">{{title}}</h2>
+            <v-divider></v-divider>
+            <div class="py-12">
+                <slot></slot>
+            </div>
         </v-container>
     </section>
 </template>
@@ -30,5 +27,10 @@
 </script>
 
 <style scoped>
-
+    .dark-section:nth-child(odd) {
+        background: #1e1e1e;
+    }
+    .light-section:nth-child(odd) {
+        background: #f6f8fb;
+    }
 </style>

@@ -9,8 +9,12 @@ export default new Vuetify({
             dark: {
                 primary: '#f44336',
                 secondary: '#36e7f4',
-                accent: '#f43688'
-            }
+                accent: '#f43688',
+                appbar: '#272727'
+            },
+            light: {
+                appbar: '#ffffff'
+            },
         },
         dark: true
     }
