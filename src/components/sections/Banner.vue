@@ -11,7 +11,9 @@
                 <v-img class="avatar_img_border" src="img/profile_pic.jpg"></v-img>
             </v-avatar>
             <h1 class="display-2 mb-3">Erik Sanne</h1>
-            <h4 class="subheading">Software Engineer</h4>
+            <vue-typed-js :strings="['Software Engineer']">
+                <h4 class="typing"></h4>
+            </vue-typed-js>
         </v-layout>
     </v-parallax>
 </template>
@@ -27,6 +29,7 @@
         transform: none !important;
         width: 100% !important;
     }
+
     .avatar_img_border {
         border: 4px solid #fff3e0;
     }

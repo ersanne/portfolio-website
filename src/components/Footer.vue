@@ -5,7 +5,7 @@
                 class="text-center"
                 cols="12"
         >
-            &copy;{{ new Date().getFullYear() }} Erik Sanne
+            Made with <v-icon color="red">mdi-heart</v-icon> | &copy;{{ new Date().getFullYear() }}
         </v-col>
     </v-footer>
 </template>

@@ -4,14 +4,14 @@
             <v-layout class="px-4 hidden-xs-only">
                 <v-flex pa-1 shrink v-for="item in bullet_items" :key="item.text" class="mb-4">
                     <v-card :color="item.color" dark>
-                        <v-card-text class="subheading" v-text="item.text"></v-card-text>
+                        <v-card-text class="white--text" v-text="item.text"></v-card-text>
                     </v-card>
                 </v-flex>
             </v-layout>
             <v-layout wrap class="px-4 hidden-sm-and-up">
                 <v-flex pa-1 shrink v-for="item in bullet_items" :key="item.text" class="mb-4">
                     <v-card :color="item.color" dark>
-                        <v-card-text class="subheading" v-text="item.text"></v-card-text>
+                        <v-card-text v-text="item.text"></v-card-text>
                     </v-card>
                 </v-flex>
             </v-layout>

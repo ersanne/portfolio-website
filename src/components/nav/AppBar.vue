@@ -1,46 +1,55 @@
 <template>
     <v-app-bar
             app
-            color="appbar"
     >
-        <div class="d-flex align-center">
-            <v-img
-                    alt="Vuetify Logo"
-                    class="shrink"
-                    contain
-                    src="@/assets/logo/logo_transparent_cropped_small.png"
-                    transition="scale-transition"
-                    width="240"
-            />
-        </div>
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
-            <v-btn flat>
-                Home
-            </v-btn>
-            <v-btn
-            >
-                Projects
-            </v-btn>
-            <v-btn
-            >
-                Blog
-            </v-btn>
-            <v-switch
-                    v-model="$vuetify.theme.dark"
-                    label="Dark Theme"
-            ></v-switch>
-        </v-toolbar-items>
+            <div class="d-flex align-center">
+                <v-img
+                        alt="Vuetify Logo"
+                        class="shrink"
+                        contain
+                        src="@/assets/logo/logo_transparent_cropped_small.png"
+                        transition="scale-transition"
+                        width="240"
+                />
+            </div>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+                <v-btn v-for="route in $router.options.routes"
+                       :key="route.path"
+                       :to="route.path"
+                       exact-active-class="primary--text">
+                    {{ route.name }}
+                </v-btn>
+            </v-toolbar-items>
+            <div style="height: 50%"
+                 class="px-2">
+                <v-btn href="/ErikSanne_CV.docx"
+                       color="primary"
+                       rounded
+                >
+                    CV
+                    <v-icon small>mdi-download</v-icon>
+                </v-btn>
+            </div>
+        <v-switch
+                v-model="$vuetify.theme.dark"
+                label="Dark Theme"
+                hide-details
+        ></v-switch>
     </v-app-bar>
 </template>
 
 <script>
     export default {
-        name: "AppBar"
+        name: "AppBar",
     }
 </script>
 
 <style scoped>
+    .max-width-md {
+        max-width: 1264px;
+    }
+
     .v-btn {
         height: 100% !important;
     }

@@ -13,6 +13,9 @@ export default new Vuetify({
                 appbar: '#272727'
             },
             light: {
+                primary: '#f44336',
+                secondary: '#36e7f4',
+                accent: '#f43688',
                 appbar: '#ffffff'
             },
         },

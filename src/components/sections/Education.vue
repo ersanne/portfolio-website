@@ -27,8 +27,8 @@
                             <span :class="`font-weight-regular ${item.color}--text text--${item.dark} pb-2`"
                                   v-text="`${item.institution}, ${item.location}`">
               </span>
-                            <div class="blue-grey--text text--darken-1 pb-1 hidden-md-and-up" v-text="item.date"></div>
-                            <div class="blue-grey--text text--darken-3" v-text="item.text"></div>
+                            <div class="text--darken-1 pb-1 hidden-md-and-up" v-text="item.date"></div>
+                            <div class="text--darken-3" v-text="item.text"></div>
                         </div>
                     </v-timeline-item>
                 </v-timeline>

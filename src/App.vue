@@ -10,8 +10,6 @@
 </template>
 
 <script>
-
-
     import BottomNav from "@/components/nav/BottomNav";
     import AppBar from "@/components/nav/AppBar";
     import Footer from "@/components/Footer";
@@ -31,8 +29,8 @@
 </script>
 
 <style>
-    .container, v-app-bar--fixed, .v-toolbar__content {
-        max-width: 1200px
+    .container, v-app-bar--fixed {
+        max-width: 1264px;
     }
     .v-toolbar--fixed, .v-toolbar__content {
         margin: 0 auto

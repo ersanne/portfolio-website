@@ -5,9 +5,9 @@
                 <div v-for="item in items" :key="item.text" class="mb-4">
                     <v-layout align-center fill-height>
                         <v-img max-height="20px" max-width="24px" contain :src="`img/flags/${item.flag}`"></v-img>
-                        <div class="subheading blue-grey--text text--darken-3 pl-1" v-text="item.text"></div>
+                        <div class="subheading text--darken-3 pl-1" v-text="item.text"></div>
                         <v-spacer></v-spacer>
-                        <div class="caption blue-grey--text text--darken-2" v-text="item.level_text"></div>
+                        <div class="caption text--darken-2" v-text="item.level_text"></div>
                     </v-layout>
                     <v-progress-linear class="my-1" height="8" :value="item.value" :color="item.color"></v-progress-linear>
                 </div>

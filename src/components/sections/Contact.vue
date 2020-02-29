@@ -1,6 +1,6 @@
 <template>
-    <SectionLayout id="contact" title="Contact">
-        <div class="text-xs-center pb-4">
+    <SectionLayout id="contact" title="Contact" class="mb-4">
+        <div class="d-flex justify-center pb-4">
             <v-btn
                     v-for="item in items"
                     :color="item.color"
@@ -8,18 +8,21 @@
                     :href="item.link"
                     :aria-label="item.label"
                     target="_blank"
-                    rel="noopener"
                     fab
                     depressed
                     dark
+                    class="mx-2"
             >
                 <v-icon medium dark>mdi-{{ item.icon }}</v-icon>
             </v-btn>
         </div>
-        <v-layout align-center justify-center fill-height>
-            <v-icon>email</v-icon>
-            <span class="title font-weight-light grey--text text--darken-3"> erik@eriksanne.com</span>
-        </v-layout>
+        <div class="d-flex justify-center">
+            <v-icon>mdi-email</v-icon>
+            <a class="title font-weight-medium text--darken-3"
+               href="mailto:erik@eriksanne.com"
+               style="text-decoration: none"
+            > erik@eriksanne.com</a>
+        </div>
     </SectionLayout>
 </template>
 
