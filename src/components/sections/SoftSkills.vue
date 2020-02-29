@@ -40,7 +40,7 @@
                 },
                 {
                     text: 'Excellent problem solver',
-                    color: 'yellow darken-2'
+                    color: 'red darken-2'
                 }
             ]
         }),

@@ -27,7 +27,7 @@
             bar_items: [
                 [
                     {
-                        icon: 'icon-java',
+                        icon: 'mdi-language-java',
                         text: 'Java',
                         value: 75,
                         level_text: 'Advanced',

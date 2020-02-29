@@ -1,5 +1,5 @@
 <template>
-    <SectionLayout id="about" title="About">
+    <SectionLayout id="about" title="About Me">
         Highly skilled and motivated Software Engineering undergraduate, with over one year of
         experience in
         professional software development. Solid knowledge of the design, development and testing of

@@ -33,7 +33,7 @@
             </div>
         <v-switch
                 v-model="$vuetify.theme.dark"
-                label="Dark Theme"
+                label="Dark Mode"
                 hide-details
         ></v-switch>
     </v-app-bar>

@@ -18,7 +18,7 @@
         </div>
         <div class="d-flex justify-center">
             <v-icon>mdi-email</v-icon>
-            <a class="title font-weight-medium text--darken-3"
+            <a class="white--text title font-weight-medium text--darken-3"
                href="mailto:erik@eriksanne.com"
                style="text-decoration: none"
             > erik@eriksanne.com</a>
@@ -31,6 +31,14 @@
     export default {
         name: "Contact",
         components: {SectionLayout},
+        props: {
+            data: {
+                name: String,
+                icon: String,
+                icon_color: String,
+                link: String
+            }
+        },
         data: () => ({
             items: [
                 {
