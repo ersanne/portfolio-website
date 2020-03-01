@@ -1,31 +1,8 @@
-# ersanne.github.io
+# Digital CV / Portfolio / Blog for and by Erik Sanne
 
 ![](https://travis-ci.com/ersanne/eriksanne-portfolio.svg?branch=master)
 
-## Project setup
-```
-yarn install
-```
+This is a simple hobby project to build a beautiful online presence.
+Currently I am using Vue.JS, Vuetify and Prismic CMS.
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Feel free to use any of my code! 
