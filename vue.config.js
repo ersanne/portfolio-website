@@ -14,10 +14,5 @@ module.exports = {
             msTileImage: 'img/icons/msapplication-icon-144x144.png'
         },
         start_url: '/',
-        workboxPluginMode: 'InjectManifest',
-        workboxOptions: {
-            // swSrc is required in InjectManifest mode.
-            swSrc: 'public/service-worker.js',
-        }
     }
 }
