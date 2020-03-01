@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "moment": "^2.24.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
     "prismic-vue": "^2.0.0",

@@ -3,7 +3,6 @@
         <v-layout wrap>
             <v-flex xs12>
                 <v-timeline :dense="$vuetify.breakpoint.smAndDown">
-                    <!-- TODO: Add color in prismic -->
                     <v-timeline-item
                             v-for="(item, i) in data"
                             :color="item.color"
@@ -13,7 +12,7 @@
             <span
                     slot="opposite"
                     :class="`title font-weight-regular ${item.color}--text text--${item.dark}`"
-                    v-text="`${item.from_date} - ${item.to_date}`"
+                    v-text="`${formatDate(item.from_date)} - ${formatDate(item.to_date)}`"
             ></span>
                         <div class="py-4">
                             <h2
@@ -28,7 +27,7 @@
                             <span :class="`font-weight-regular ${item.color}--text text--${item.dark} pb-2`"
                                   v-text="`${item.institution}, ${item.location}`">
               </span>
-                            <div class="text--darken-1 pb-1 hidden-md-and-up" v-text="`${item.from_date} - ${item.to_date}`"></div>
+                            <div class="text--darken-1 pb-1 hidden-md-and-up" v-text="`${formatDate(item.from_date)} - ${formatDate(item.to_date)}`"></div>
 <!--                            <div class="text&#45;&#45;darken-3" v-text="item.summary"></div>-->
                             <prismic-rich-text class="text--darken-3" :field="item.summary"/>
                         </div>
@@ -40,6 +39,7 @@
 </template>
 
 <script>
+    import moment from 'moment'
     import SectionLayout from "@/components/sections/SectionLayout";
 
     export default {
@@ -73,6 +73,11 @@
                         text: 'A-Levels in Math\'s, Further Math\'s and Economics. IELTS (Academic) 8 '
                     }
                 ]
+            }
+        },
+        methods: {
+            formatDate : function(date) {
+                return moment(date).format('MMM YYYY')
             }
         }
     }

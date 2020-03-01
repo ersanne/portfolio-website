@@ -1,13 +1,13 @@
 <template>
-    <div class="home-content" v-if="contentReady">
+    <div class="home-content">
         <Banner></Banner>
-        <About></About>
-        <Skills></Skills>
-        <SoftSkills></SoftSkills>
-        <Languages></Languages>
-        <Experience></Experience>
+        <About :data="sections.about"></About>
+        <Skills :data="sections.tech_skills"></Skills>
+        <SoftSkills :data="sections.soft_skills"></SoftSkills>
+        <Languages :data="sections.languages"></Languages>
+        <Experience :data="sections.experience"></Experience>
         <Education :data="sections.education"></Education>
-        <Contact></Contact>
+        <Contact :data="sections.contact"></Contact>
     </div>
 </template>
 
