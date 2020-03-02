@@ -4,13 +4,23 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    homeContent: []
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+    state: {
+        navLinks: [
+            {
+                path: '/',
+                name: 'Home'
+            },
+            {
+                path: '/projects',
+                name: 'Projects'
+            },
+            {
+                path: '/blog',
+                name: 'Blog'
+            },
+        ]
+    },
+    mutations: {},
+    actions: {},
+    modules: {}
 })

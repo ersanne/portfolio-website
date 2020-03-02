@@ -15,12 +15,12 @@
         </div>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
-            <v-btn v-for="route in routes"
-                   :key="route.path"
-                   :to="route.path"
+            <v-btn v-for="(link, i) in navLinks"
+                   :key="i"
+                   :to="link.path"
                    exact-active-class="primary--text"
                    text>
-                {{ route.name }}
+                {{ link.name }}
             </v-btn>
         </v-toolbar-items>
         <div style="height: 50%"
@@ -43,13 +43,13 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
+
     export default {
         name: "AppBar",
-        computed: {
-            routes: function () {
-                return this.$router.options.routes.filter(route => route.path !== '*')
-            }
-        }
+        computed: mapState([
+            'navLinks'
+        ])
     }
 </script>
 

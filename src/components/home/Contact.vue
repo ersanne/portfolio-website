@@ -1,6 +1,6 @@
 <template>
     <SectionLayout id="contact" title="Contact" class="p-0">
-        <div class="d-flex justify-center pb-4">
+        <div class="d-flex justify-center pb-12">
             <v-btn
                     v-for="(item, i) in data"
                     :key="i"

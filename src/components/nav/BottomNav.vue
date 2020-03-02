@@ -6,15 +6,15 @@
             grow
     >
         <v-row no-gutters>
-            <v-col v-for="route in routes"
-                   :key="route.path"
+            <v-col v-for="(link, i) in navLinks"
+                   :key="i"
             >
                 <v-btn
-                        :to="route.path"
+                        :to="link.path"
                         class="subtitle-1 font-weight-medium"
                         exact-active-class="primary--text subtitle-1 font-weight-medium"
                         text>
-                    {{ route.name }}
+                    {{ link.name }}
                 </v-btn>
             </v-col>
             <v-col align-self="center">
@@ -31,13 +31,13 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
+
     export default {
         name: "BottomNav",
-        computed: {
-            routes: function () {
-                return this.$router.options.routes.filter(route => route.path !== '*')
-            }
-        }
+        computed: mapState([
+            'navLinks'
+        ])
     }
 </script>
 
