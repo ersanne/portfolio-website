@@ -3,14 +3,15 @@
             app
     >
         <div class="d-flex align-center">
-            <v-img
-                    alt="Vuetify Logo"
-                    class="shrink"
-                    contain
-                    src="@/assets/logo/full-name/logo_transparent_cropped_small.png"
-                    transition="scale-transition"
-                    width="240"
-            />
+            <router-link to="/">
+                <v-img
+                        class="shrink"
+                        contain
+                        src="@/assets/logo/full-name/logo_transparent_cropped_small.png"
+                        transition="scale-transition"
+                        width="240"
+                />
+            </router-link>
         </div>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
