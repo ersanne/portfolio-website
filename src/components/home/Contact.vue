@@ -1,5 +1,5 @@
 <template>
-    <SectionLayout id="contact" title="Contact" class="mb-4">
+    <SectionLayout id="contact" title="Contact" class="p-0">
         <div class="d-flex justify-center pb-4">
             <v-btn
                     v-for="(item, i) in data"
@@ -16,7 +16,7 @@
                 <v-icon medium dark>{{ item.icon }}</v-icon>
             </v-btn>
         </div>
-        <div class="d-flex justify-center pb-4">
+        <div class="d-flex justify-center">
             <v-icon>mdi-email</v-icon>
             <a :class="`${this.$vuetify.theme.dark ? 'white--text text--darken-3' : 'grey--text text--darken-3'} title font-weight-medium`"
                href="mailto:erik@eriksanne.com"

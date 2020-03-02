@@ -4,7 +4,7 @@
             :items="items"
             chips
             clearable
-            label="Your favorite hobbies"
+            label="Filter by tags"
             multiple
             prepend-icon="mdi-filter"
             solo
@@ -17,8 +17,7 @@
                     @click="select"
                     @click:close="remove(item)"
             >
-                <strong>{{ item }}</strong>&nbsp;
-                <span>(interest)</span>
+                <span>{{ item }}</span>&nbsp;
             </v-chip>
         </template>
     </v-combobox>
