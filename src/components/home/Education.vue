@@ -5,26 +5,26 @@
                 <v-timeline :dense="$vuetify.breakpoint.smAndDown">
                     <v-timeline-item
                             v-for="(item, i) in data"
-                            :color="item.color"
                             :key="i"
+                            :color="item.color"
                             small
                     >
             <span
                     slot="opposite"
-                    :class="`title font-weight-regular ${item.color}--text text--${item.dark}`"
+                    :class="`title font-weight-regular ${item.color}--text text--${item.color_variant}`"
                     v-text="`${formatDate(item.from_date)} - ${formatDate(item.to_date)}`"
             ></span>
                         <div class="py-4">
                             <h2
-                                    :class="`title font-weight-regular ${item.color}--text text--${item.dark} pb-1`"
+                                    :class="`title font-weight-regular ${item.color}--text text--${item.color_variant} pb-1`"
                                     v-text="$prismic.richTextAsPlain(item.qualification)"
                             ></h2>
                             <span
-                                    :class="`font-weight-regular ${item.color}--text text--${item.dark} pb-3`"
+                                    :class="`font-weight-regular ${item.color}--text text--${item.color_variant} pb-3`"
                                     v-text="item.grade">
               </span>
                             <br v-if="item.grade">
-                            <span :class="`font-weight-regular ${item.color}--text text--${item.dark} pb-2`"
+                            <span :class="`font-weight-regular ${item.color}--text text--${item.color_variant} pb-2`"
                                   v-text="`${item.institution}, ${item.location}`">
               </span>
                             <div class="text--darken-1 pb-1 hidden-md-and-up" v-text="`${formatDate(item.from_date)} - ${formatDate(item.to_date)}`"></div>
@@ -40,7 +40,7 @@
 
 <script>
     import moment from 'moment'
-    import SectionLayout from "@/components/sections/SectionLayout";
+    import SectionLayout from "@/components/home/SectionLayout";
 
     export default {
         name: "Education",
@@ -48,34 +48,8 @@
         props: {
             data: Array,
         },
-        data() {
-            return {
-                items: [
-                    {
-                        color: 'teal',
-                        dark: '${item.dark}',
-                        date: '2016 - 2020',
-                        title: 'BEng (Hons) Software Engineering',
-                        grade: 'First-Class (Predicted)',
-                        institution: 'Edinburgh Napier University',
-                        location: 'Edinburgh, UK',
-                        text: 'A wide variety of modules covering the analysis, design, development, testing, evaluation and' +
-                            ' modification of reliable, maintainable and high-quality software including real-time, mobile and' +
-                            ' large-scale enterprise systems.'
-                    },
-                    {
-                        color: 'blue',
-                        dark: '${item.dark}',
-                        date: '2014 - 2016',
-                        title: 'A-Levels',
-                        institution: 'Boston College',
-                        location: 'Boston, UK',
-                        text: 'A-Levels in Math\'s, Further Math\'s and Economics. IELTS (Academic) 8 '
-                    }
-                ]
-            }
-        },
         methods: {
+            // TODO make this a static helper outside components
             formatDate : function(date) {
                 return moment(date).format('MMM YYYY')
             }

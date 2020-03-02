@@ -1,12 +1,18 @@
 <template>
     <div class="blog">
-        This is where my blog will be.
+        <v-container>
+            <BlogFilter></BlogFilter>
+            <BlogExpansionPanel></BlogExpansionPanel>
+        </v-container>
     </div>
 </template>
 
 <script>
+    import BlogExpansionPanel from "@/components/blog/BlogExpansionPanel";
+    import BlogFilter from "@/components/blog/BlogFilter";
     export default {
-        name: "Blog"
+        name: "Blog",
+        components: {BlogFilter, BlogExpansionPanel}
     }
 </script>
 

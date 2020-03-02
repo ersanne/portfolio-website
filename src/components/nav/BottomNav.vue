@@ -3,25 +3,41 @@
             app
             fixed
             horizontal
+            grow
     >
-        <v-btn>
-            <span>Home</span>
-            <v-icon>mdi-home</v-icon>
-        </v-btn>
-        <v-btn>
-            <span>Portfolio</span>
-            <v-icon>mdi-folder</v-icon>
-        </v-btn>
-        <v-btn>
-            <span>Blog</span>
-            <v-icon>mdi-heart</v-icon>
-        </v-btn>
+        <v-row no-gutters>
+            <v-col v-for="route in routes"
+                   :key="route.path"
+            >
+                <v-btn
+                        :to="route.path"
+                        class="subtitle-1 font-weight-medium"
+                        exact-active-class="primary--text subtitle-1 font-weight-medium"
+                        text>
+                    {{ route.name }}
+                </v-btn>
+            </v-col>
+            <v-col align-self="center">
+                <v-switch
+                        v-model="$vuetify.theme.dark"
+                        label="Dark Mode"
+                        class="pt-1 mt-0"
+                        hide-details
+                        dense
+                ></v-switch>
+            </v-col>
+        </v-row>
     </v-bottom-navigation>
 </template>
 
 <script>
     export default {
-        name: "BottomNav"
+        name: "BottomNav",
+        computed: {
+            routes: function () {
+                return this.$router.options.routes.filter(route => route.path !== '*')
+            }
+        }
     }
 </script>
 

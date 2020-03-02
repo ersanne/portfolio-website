@@ -23,7 +23,7 @@
 </template>
 
 <script>
-    import SectionLayout from "@/components/sections/SectionLayout";
+    import SectionLayout from "@/components/home/SectionLayout";
 
     export default {
         name: "Skills",
@@ -35,7 +35,14 @@
 </script>
 
 <style scoped>
-    .column_wrapper {
-        column-count: 2;
+    @media (max-width:599px) {
+        .column_wrapper {
+            column-count: 1;
+        }
+    }
+    @media (min-width:600px) {
+        .column_wrapper {
+            column-count: 2;
+        }
     }
 </style>
