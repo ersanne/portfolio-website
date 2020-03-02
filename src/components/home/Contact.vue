@@ -17,7 +17,7 @@
             </v-btn>
         </div>
         <div class="d-flex justify-center">
-            <v-icon>mdi-email</v-icon>
+            <v-icon class="mr-1">mdi-email</v-icon>
             <a :class="`${this.$vuetify.theme.dark ? 'white--text text--darken-3' : 'grey--text text--darken-3'} title font-weight-medium`"
                href="mailto:erik@eriksanne.com"
                style="text-decoration: none"

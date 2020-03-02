@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueTypedJs)
 Vue.use(PrismicVue, {
-  endpoint: window.prismic.endpoint,
+  endpoint: 'https://eriksannecom.cdn.prismic.io/api/v2',
   linkResolver,
   runtimeCompiler: true
 });

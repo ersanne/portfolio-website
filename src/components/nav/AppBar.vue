@@ -25,12 +25,13 @@
         </v-toolbar-items>
         <div style="height: 50%"
              class="px-2">
-            <v-btn href="https://drive.google.com/uc?id=1hB4meXXmXaFwEICmqYnHHpmmLm59RyDR&export=download"
+            <v-btn href="/ErikSanne_CV.pdf"
                    color="primary"
                    rounded
+                   target="_blank"
             >
-                CV
                 <v-icon small>mdi-download</v-icon>
+                CV
             </v-btn>
         </div>
         <v-switch

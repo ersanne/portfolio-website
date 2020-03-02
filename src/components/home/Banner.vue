@@ -1,25 +1,24 @@
 <template>
-    <v-parallax v-if="data.banner_image !== null"
-            :src="data.banner_image.url"
+    <v-img :src="data.banner_image.url"
+           height="500"
     >
-        <v-layout
-                align-center
-                column
-                justify-center
+        <div class="d-flex flex-column align-center justify-center"
+             style="height: 500px"
         >
             <v-avatar class="mb-4" size="200">
                 <prismic-image class="avatar_img_border" :field="data.profile_picture"></prismic-image>
             </v-avatar>
-            <h1 class="display-2 mb-3">Erik Sanne</h1>
+            <h1 class="white--text display-2 mb-3">Erik Sanne</h1>
             <vue-typed-js :strings="subtitle_array"
                           :showCursor="false"
                           :typeSpeed="60"
                           :startDelay="50"
+                          class="white--text"
             >
                 <h4><span class="typing"></span> Software Engineer</h4>
             </vue-typed-js>
-        </v-layout>
-    </v-parallax>
+        </div>
+    </v-img>
 </template>
 
 <script>
