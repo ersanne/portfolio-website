@@ -5,7 +5,7 @@
             <RouterView></RouterView>
         </v-content>
         <Footer></Footer>
-        <BottomNav class="hidden-md-and-up"></BottomNav>
+        <BottomNav></BottomNav>
     </v-app>
 </template>
 

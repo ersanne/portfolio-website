@@ -8,6 +8,7 @@
         <Experience :data="sections.experience"></Experience>
         <Education :data="sections.education"></Education>
         <Contact :data="sections.contact"></Contact>
+        <ButtonGoTop></ButtonGoTop>
     </div>
 </template>
 
@@ -20,10 +21,12 @@
     import Skills from "@/components/home/TechnicalSkills";
     import Education from "@/components/home/Education";
     import Experience from "@/components/home/Experience";
+    import ButtonGoTop from "@/components/home/ButtonGoTop";
 
     export default {
         name: "Home",
         components: {
+            ButtonGoTop,
             Banner,
             SoftSkills,
             About,

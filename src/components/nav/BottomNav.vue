@@ -4,6 +4,7 @@
             fixed
             horizontal
             grow
+            class="hidden-md-and-up"
     >
         <v-row no-gutters>
             <v-col v-for="(link, i) in navLinks"

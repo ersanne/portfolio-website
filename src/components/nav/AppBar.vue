@@ -25,7 +25,7 @@
         </v-toolbar-items>
         <div style="height: 50%"
              class="px-2">
-            <v-btn href="/ErikSanne_CV.docx"
+            <v-btn href="https://drive.google.com/uc?id=1hB4meXXmXaFwEICmqYnHHpmmLm59RyDR&export=download"
                    color="primary"
                    rounded
             >
