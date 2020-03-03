@@ -16,7 +16,10 @@
 
     export default {
         name: 'App',
-
+        metaInfo: {
+            title: 'Erik Sanne',
+            titleTemplate: '%s - Erik Sanne',
+        },
         components: {
             Footer,
             AppBar,

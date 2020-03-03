@@ -4,8 +4,9 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import VueTypedJs from 'vue-typed-js'
-import PrismicVue from 'prismic-vue';
-import linkResolver from './prismic/link-resolver';
+import PrismicVue from 'prismic-vue'
+import linkResolver from './prismic/link-resolver'
+import VueMeta from 'vue-meta'
 
 import './registerServiceWorker'
 
@@ -17,6 +18,9 @@ Vue.use(PrismicVue, {
   linkResolver,
   runtimeCompiler: true
 });
+Vue.use(VueMeta, {
+  refreshOnceOnNavigation: true
+})
 
 new Vue({
   router,

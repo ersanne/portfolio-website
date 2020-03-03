@@ -10,14 +10,14 @@ export default new Vuex.Store({
                 path: '/',
                 name: 'Home'
             },
-            {
-                path: '/projects',
-                name: 'Projects'
-            },
-            {
-                path: '/blog',
-                name: 'Blog'
-            },
+            // {
+            //     path: '/projects',
+            //     name: 'Projects'
+            // },
+            // {
+            //     path: '/blog',
+            //     name: 'Blog'
+            // },
         ]
     },
     mutations: {},
