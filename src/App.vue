@@ -6,6 +6,7 @@
         </v-content>
         <Footer></Footer>
         <BottomNav></BottomNav>
+        <CookieNotice></CookieNotice>
     </v-app>
 </template>
 
@@ -13,6 +14,7 @@
     import BottomNav from "@/components/nav/BottomNav";
     import AppBar from "@/components/nav/AppBar";
     import Footer from "@/components/Footer";
+    import CookieNotice from "@/views/CookieNotice";
 
     export default {
         name: 'App',
@@ -21,6 +23,7 @@
             titleTemplate: '%s - Erik Sanne',
         },
         components: {
+            CookieNotice,
             Footer,
             AppBar,
             BottomNav

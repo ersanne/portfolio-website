@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify'
 import VueTypedJs from 'vue-typed-js'
 import PrismicVue from 'prismic-vue'
 import linkResolver from './prismic/link-resolver'
+import VueGtag from "vue-gtag";
 
 import './registerServiceWorker'
 
@@ -13,14 +14,20 @@ Vue.config.productionTip = false
 
 Vue.use(VueTypedJs)
 Vue.use(PrismicVue, {
-  endpoint: 'https://eriksannecom.cdn.prismic.io/api/v2',
-  linkResolver,
-  runtimeCompiler: true
+    endpoint: 'https://eriksannecom.cdn.prismic.io/api/v2',
+    linkResolver,
+    runtimeCompiler: true
 });
+Vue.use(VueGtag, {
+    config: {
+        id: "UA-139713980-1" ,
+        disabled: true
+    },
+}, router)
 
 new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
+    router,
+    store,
+    vuetify,
+    render: h => h(App)
 }).$mount('#app')
