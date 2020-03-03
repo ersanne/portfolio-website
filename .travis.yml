@@ -6,9 +6,12 @@ cache: npm
 
 script: npm run build
 
+before_deploy: echo "eriksanne.com" > ./dist/CNAME
+
 deploy:
+  edge: true
   provider: pages
-  skip_cleanup: true
+  cleanup: false
   github_token: $GITHUB_TOKEN
   local_dir: dist
   repo: ersanne/ersanne.github.io
