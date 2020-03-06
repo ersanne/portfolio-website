@@ -8205,10 +8205,10 @@ vue-eslint-parser@^7.0.0:
     esquery "^1.0.1"
     lodash "^4.17.15"
 
-vue-gtm@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/vue-gtm/-/vue-gtm-2.2.0.tgz#7b96cce86eb1318d37f55e761cb3253b5369c312"
-  integrity sha512-DsypU2nqN7xc8GbdAxOatzj+LCCkM9F4Lz5m0FhGLw1Cs+ENgHt7ieHIRD41pu8g0QbJiIMkpcnwPQEBe2Sg0w==
+vue-gtag@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/vue-gtag/-/vue-gtag-1.6.2.tgz#0e5cd7faf0a6aa635c2a7d4cb3ef80ab545a0198"
+  integrity sha512-kKjVP+ch89IkGWfnszd02Lbg4W76rsPlrCZrRzDBoQaBPPx5TTQIL/bbt9hxcWDcRDNdAeh2NCYfijl/TAD+Mw==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
@@ -8265,11 +8265,6 @@ vue-typed-js@^0.1.2:
   integrity sha512-9kDGuz17uYJghe/1hepRWiWYssgUFtrKnMGPHlWjVRxdvs/d9xYYWMkgzztjhx1R1B33hXkN8ctmkzCYHQ+caA==
   dependencies:
     typed.js "git+https://github.com/mattboldt/typed.js.git"
-
-vue-ua@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/vue-ua/-/vue-ua-1.7.0.tgz#819a9eef2d2cf65e90096480901d2912b43ec319"
-  integrity sha512-OD1hItI6CTwzLWaNaeEfDjFsHbzEp+FXsV55eF11INdhV+ItNfxhAbFEeZzCR4mY3uwOJw0FN+wIIyWvJQ8tpQ==
 
 vue@^2.6.11:
   version "2.6.11"
