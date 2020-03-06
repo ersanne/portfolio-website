@@ -20,7 +20,7 @@ Vue.use(PrismicVue, {
 });
 Vue.use(VueGtm, {
     config: {
-        id: "UA-139713980-1" ,
+        id: "GTM-W8XN4XT" ,
         enabled: false,
         vueRouter: router,
         debug: true,
