@@ -25,6 +25,17 @@
 
     export default {
         name: "Home",
+        components: {
+            ButtonGoTop,
+            Banner,
+            SoftSkills,
+            About,
+            Contact,
+            Languages,
+            Skills,
+            Education,
+            Experience,
+        },
         metaInfo: {
             title: 'Home',
             meta: [
@@ -57,17 +68,6 @@
                 {itemprop: 'description', content: 'Erik Sanne Homepage and Digital CV'},
                 {itemprop: 'image', content: 'https://www.my-site.com/my-special-image.jpg'}
             ]
-        },
-        components: {
-            ButtonGoTop,
-            Banner,
-            SoftSkills,
-            About,
-            Contact,
-            Languages,
-            Skills,
-            Education,
-            Experience,
         },
         data() {
             return {

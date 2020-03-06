@@ -14,7 +14,7 @@
     import BottomNav from "@/components/nav/BottomNav";
     import AppBar from "@/components/nav/AppBar";
     import Footer from "@/components/Footer";
-    import CookieNotice from "@/views/CookieNotice";
+    import CookieNotice from "@/components/CookieNotice";
 
     export default {
         name: 'App',

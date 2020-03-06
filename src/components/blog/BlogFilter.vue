@@ -1,35 +1,40 @@
 <template>
-    <v-combobox
+    <v-autocomplete
             v-model="chips"
-            :items="items"
+            :items="tags"
+            item-text="tag"
+            item-value="tag"
             chips
             clearable
-            label="Filter by tags"
             multiple
+            label="Filter by tags..."
             prepend-icon="mdi-filter"
-            solo
     >
-        <template v-slot:selection="{ attrs, item, select, selected }">
-            <v-chip
-                    v-bind="attrs"
-                    :input-value="selected"
+        <template v-slot:selection="data">
+            <v-chip v-bind="data.attrs"
+                    :input-value="data.selected"
                     close
-                    @click="select"
-                    @click:close="remove(item)"
+                    @click="data.select"
+                    @click:close="remove(data.item)"
             >
-                <span>{{ item }}</span>&nbsp;
+                <v-icon>{{data.item.icon}}</v-icon><span>{{ data.item.tag }}</span>
             </v-chip>
         </template>
-    </v-combobox>
+        <template v-slot:item="data">
+            <v-icon>{{data.item.icon}}</v-icon><span>{{ data.item.tag }}</span>
+        </template>
+    </v-autocomplete>
 </template>
 
 <script>
     export default {
         name: "BlogFilter",
+        props: {
+            tags: Array
+        },
         data() {
             return {
-                chips: ['Programming', 'Playing video games', 'Watching movies', 'Sleeping'],
-                items: ['Streaming', 'Eating'],
+                chips: [],
             }
         },
         methods: {

@@ -6,7 +6,7 @@ import vuetify from './plugins/vuetify'
 import VueTypedJs from 'vue-typed-js'
 import PrismicVue from 'prismic-vue'
 import linkResolver from './prismic/link-resolver'
-import VueGtag from "vue-gtag";
+import VueGtm from 'vue-gtm'
 
 import './registerServiceWorker'
 
@@ -18,10 +18,12 @@ Vue.use(PrismicVue, {
     linkResolver,
     runtimeCompiler: true
 });
-Vue.use(VueGtag, {
+Vue.use(VueGtm, {
     config: {
         id: "UA-139713980-1" ,
-        disabled: true
+        enabled: false,
+        vueRouter: router,
+        ignoredViews: ['prismic-preview', 'projects', 'blog']
     },
 }, router)
 

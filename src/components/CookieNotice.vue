@@ -18,10 +18,10 @@
         components: {CookieLaw},
         methods: {
             acceptCookies: function () {
-                this.$gtag.optIn()
+                this.$gtm.enable(true)
             },
             declineCookies: function () {
-                this.$gtag.optOut()
+                this.$gtm.enable(false)
             }
         }
     }
