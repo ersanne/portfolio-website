@@ -36,9 +36,10 @@
         </div>
         <v-switch
                 class="hidden-sm-and-down"
-                v-model="$vuetify.theme.dark"
+                v-model="$store.state.darkMode"
                 label="Dark Mode"
                 hide-details
+                @click.stop.prevent="toggleTheme()"
         ></v-switch>
     </v-app-bar>
 </template>
@@ -50,7 +51,12 @@
         name: "AppBar",
         computed: mapState([
             'navLinks'
-        ])
+        ]),
+        methods: {
+            toggleTheme() {
+                this.$store.dispatch('toggleDarkMode');
+            }
+        }
     }
 </script>
 

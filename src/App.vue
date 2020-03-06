@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <v-app dark>
         <AppBar></AppBar>
         <v-content>
             <RouterView></RouterView>
@@ -31,6 +31,9 @@
         data: () => ({
             fab: false
         }),
+        created: function () {
+            this.$vuetify.theme.dark = this.$store.getters.darkMode
+        }
     };
 </script>
 
