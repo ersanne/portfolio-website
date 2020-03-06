@@ -8266,6 +8266,11 @@ vue-typed-js@^0.1.2:
   dependencies:
     typed.js "git+https://github.com/mattboldt/typed.js.git"
 
+vue-ua@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/vue-ua/-/vue-ua-1.7.0.tgz#819a9eef2d2cf65e90096480901d2912b43ec319"
+  integrity sha512-OD1hItI6CTwzLWaNaeEfDjFsHbzEp+FXsV55eF11INdhV+ItNfxhAbFEeZzCR4mY3uwOJw0FN+wIIyWvJQ8tpQ==
+
 vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"

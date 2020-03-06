@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify'
 import VueTypedJs from 'vue-typed-js'
 import PrismicVue from 'prismic-vue'
 import linkResolver from './prismic/link-resolver'
+// import VueAnalytics from "vue-ua";
 import VueGtm from 'vue-gtm'
 
 import './registerServiceWorker'
@@ -18,15 +19,20 @@ Vue.use(PrismicVue, {
     linkResolver,
     runtimeCompiler: true
 });
+// Vue.use(VueAnalytics, {
+//     appName: 'ErikSanne.com',
+//     appVersion: '1.0',
+//     trackingId: "UA-139713980-1",
+//     vueRouter: router,
+//     ignoredViews: ['prismic-preview', 'projects', 'blog'],
+//     enabled: false
+// })
 Vue.use(VueGtm, {
-    config: {
-        id: "GTM-W8XN4XT" ,
-        enabled: false,
-        vueRouter: router,
-        debug: true,
-        ignoredViews: ['prismic-preview', 'projects', 'blog']
-    },
-}, router)
+    id: "GTM-W8XN4XT",
+    vueRouter: router,
+    ignoredViews: ['prismic-preview', 'projects', 'blog'],
+    enabled: false,
+})
 
 new Vue({
     router,
