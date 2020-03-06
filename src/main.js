@@ -23,6 +23,7 @@ Vue.use(VueGtm, {
         id: "UA-139713980-1" ,
         enabled: false,
         vueRouter: router,
+        debug: true,
         ignoredViews: ['prismic-preview', 'projects', 'blog']
     },
 }, router)

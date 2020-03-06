@@ -66,7 +66,7 @@
                 // Google / Schema.org markup:
                 {itemprop: 'name', content: 'Erik Sanne'},
                 {itemprop: 'description', content: 'Erik Sanne Homepage and Digital CV'},
-                {itemprop: 'image', content: 'https://www.my-site.com/my-special-image.jpg'}
+                {itemprop: 'image', content: 'https://www.eriksanne.com/img/logo.png'}
             ]
         },
         data() {

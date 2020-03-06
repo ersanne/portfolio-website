@@ -21,7 +21,6 @@
                 this.$gtm.enable(true)
             },
             declineCookies: function () {
-                this.$gtm.enable(false)
             }
         }
     }
