@@ -19,10 +19,8 @@ Vue.use(PrismicVue, {
     runtimeCompiler: true
 });
 Vue.use(VueGtag, {
-    config: {
-        id: "UA-139713980-1" ,
-        enabled: false
-    },
+    config: { id: "UA-139713980-1" },
+    bootstrap: false,
 }, router)
 
 new Vue({

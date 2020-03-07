@@ -12,13 +12,17 @@
 
 <script>
     import CookieLaw from 'vue-cookie-law'
+    import {bootstrap} from 'vue-gtag'
 
     export default {
         name: "CookieNotice",
         components: {CookieLaw},
         methods: {
             acceptCookies: function () {
-                this.$gtm.enable(true)
+                // eslint-disable-next-line no-unused-vars
+                bootstrap().then(gtag => {
+                    // all done!
+                })
             },
             declineCookies: function () {
             }
