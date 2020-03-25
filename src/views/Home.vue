@@ -56,12 +56,12 @@
                 {property: 'og:description', content: 'Erik Sanne Homepage and Digital CV'},
                 // Twitter card
                 {name: 'twitter:card', content: 'summary'},
-                {name: 'twitter:site', content: 'https://www.my-site.com/my-special-page'},
+                {name: 'twitter:site', content: 'https://eriksanne.com'},
                 {name: 'twitter:title', content: 'Erik Sanne'},
                 {name: 'twitter:description', content: 'Erik Sanne Homepage and Digital CV'},
                 // Your twitter handle, if you have one.
-                {name: 'twitter:creator', content: '@alligatorio'},
-                {name: 'twitter:image:src', content: 'https://eriksanne.com/img/logo.png'},
+                {name: 'twitter:creator', content: '@ErikKonradSanne'},
+                {name: 'twitter:image:src', content: 'https://eriksanne.com/img/profile_pic.jpg'},
 
                 // Google / Schema.org markup:
                 {itemprop: 'name', content: 'Erik Sanne'},
