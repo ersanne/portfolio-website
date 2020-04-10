@@ -6,7 +6,7 @@
             grow
             class="hidden-md-and-up"
     >
-        <v-row no-gutters>
+        <v-row no-gutters justify="center">
             <v-col v-for="(link, i) in navLinks"
                    :key="i"
             >
@@ -19,7 +19,8 @@
                     {{ link.name }}
                 </v-btn>
             </v-col>
-            <v-col cols="5" xs="4" sm="3" class="pl-3" align-self="center">
+            <!--<v-col cols="5" xs="4" sm="3" class="pl-3" align-self="center">-->
+            <v-col cols="auto" align-self="center"> <!-- Until Nav links are re-enabled -->
                 <v-switch
                         v-model="$store.state.darkMode"
                         label="Dark Mode"
