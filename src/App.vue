@@ -32,7 +32,22 @@
             fab: false
         }),
         created: function () {
-            this.$vuetify.theme.dark = this.$store.getters.darkMode
+            // Check to see if Media-Queries are supported
+            if (window.matchMedia && this.$store.getters.usePreferredColorScheme) {
+                // Check if the dark-mode Media-Query matches
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    // Dark
+                    this.$store.dispatch('toggleDarkMode');
+                } else {
+                    // Light
+                    // Nothing to do here
+                }
+            } else {
+                // Default (when Media-Queries are not supported or theme was previously set)
+                this.$vuetify.theme.dark = this.$store.getters.darkMode
+            }
+
+
         }
     };
 </script>

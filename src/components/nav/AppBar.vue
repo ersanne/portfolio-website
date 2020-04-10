@@ -54,7 +54,8 @@
         ]),
         methods: {
             toggleTheme() {
-                this.$store.dispatch('toggleDarkMode');
+                this.$store.dispatch('toggleDarkMode')
+                this.$store.dispatch('disablePreferredColorScheme')
             }
         }
     }

@@ -12,6 +12,7 @@ const vuexLocal = new VuexPersistence({
 
 export default new Vuex.Store({
     state: {
+        usePreferredColorScheme: true,
         darkMode: false,
         navLinks: [
             {
@@ -22,18 +23,24 @@ export default new Vuex.Store({
             //     path: '/projects',
             //     name: 'Projects'
             // },
-            // {
-            //     path: '/blog',
-            //     name: 'Blog'
-            // },
+            {
+                path: '/blog',
+                name: 'Blog'
+            },
         ]
     },
     getters: {
         darkMode: state => {
             return state.darkMode
-        }
+        },
+        usePreferredColorScheme: state => {
+            return state.usePreferredColorScheme
+        },
     },
     mutations: {
+        disablePreferredColorScheme(state) {
+            state.usePreferredColorScheme = false
+        },
         toggleDarkMode(state) {
             // Update state and vuetify theme
             state.darkMode = !state.darkMode
@@ -41,6 +48,9 @@ export default new Vuex.Store({
         }
     },
     actions: {
+        disablePreferredColorScheme({commit}) {
+            commit('disablePreferredColorScheme')
+        },
         toggleDarkMode({commit}) {
             commit('toggleDarkMode')
         }
