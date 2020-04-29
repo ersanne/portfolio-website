@@ -45,6 +45,10 @@ export default new Vuex.Store({
             // Update state and vuetify theme
             state.darkMode = !state.darkMode
             Vuetify.framework.theme.dark = state.darkMode
+        },
+        setDarkMode(state) {
+            state.darkMode = true
+            Vuetify.framework.theme.dark = true
         }
     },
     actions: {
@@ -53,6 +57,9 @@ export default new Vuex.Store({
         },
         toggleDarkMode({commit}) {
             commit('toggleDarkMode')
+        },
+        setDarkMode({commit}) {
+            commit('setDarkMode')
         }
     },
     modules: {},

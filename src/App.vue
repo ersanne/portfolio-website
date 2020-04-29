@@ -12,9 +12,9 @@
 
 <script>
     import BottomNav from "@/components/nav/BottomNav";
-    import AppBar from "@/components/nav/AppBar";
     import Footer from "@/components/Footer";
     import CookieNotice from "@/components/CookieNotice";
+    import AppBar from "@/components/nav/AppBar";
 
     export default {
         name: 'App',
@@ -23,9 +23,9 @@
             titleTemplate: '%s - Erik Sanne',
         },
         components: {
+            AppBar,
             CookieNotice,
             Footer,
-            AppBar,
             BottomNav
         },
         data: () => ({
@@ -37,7 +37,7 @@
                 // Check if the dark-mode Media-Query matches
                 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     // Dark
-                    this.$store.dispatch('toggleDarkMode');
+                    this.$store.dispatch('setDarkMode')
                 } else {
                     // Light
                     // Nothing to do here
