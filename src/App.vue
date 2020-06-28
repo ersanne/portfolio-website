@@ -6,14 +6,14 @@
         </v-content>
         <Footer></Footer>
         <BottomNav></BottomNav>
-        <CookieNotice></CookieNotice>
+<!--        <CookieNotice></CookieNotice>-->
     </v-app>
 </template>
 
 <script>
     import BottomNav from "@/components/nav/BottomNav";
     import Footer from "@/components/Footer";
-    import CookieNotice from "@/components/CookieNotice";
+    // import CookieNotice from "@/components/CookieNotice";
     import AppBar from "@/components/nav/AppBar";
 
     export default {
@@ -24,7 +24,7 @@
         },
         components: {
             AppBar,
-            CookieNotice,
+            // CookieNotice,
             Footer,
             BottomNav
         },

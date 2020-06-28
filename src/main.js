@@ -5,8 +5,8 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import VueTypedJs from 'vue-typed-js'
 import PrismicVue from 'prismic-vue'
-import linkResolver from './prismic/link-resolver'
-import VueGtag from "vue-gtag";
+import linkResolver from './service/prismic/link-resolver'
+// import VueGtag from "vue-gtag";
 
 import './registerServiceWorker'
 
@@ -18,10 +18,10 @@ Vue.use(PrismicVue, {
     linkResolver,
     runtimeCompiler: true
 });
-Vue.use(VueGtag, {
-    config: { id: "UA-139713980-1" },
-    bootstrap: false,
-}, router)
+// Vue.use(VueGtag, {
+//     config: { id: "UA-139713980-1" },
+//     bootstrap: false,
+// }, router)
 
 new Vue({
     router,
