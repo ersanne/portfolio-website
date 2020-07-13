@@ -1,7 +1,5 @@
 <template>
-    <v-app-bar
-            app
-    >
+    <v-app-bar>
         <div class="d-flex align-center">
             <router-link to="/">
                 <v-img
@@ -13,6 +11,7 @@
                 />
             </router-link>
         </div>
+        <div></div>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
             <v-btn v-for="(link, i) in navLinks"
