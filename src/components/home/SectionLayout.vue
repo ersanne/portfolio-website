@@ -1,9 +1,9 @@
 <template>
     <section :class="this.$vuetify.theme.dark ? 'dark-section' : 'light-section'">
         <v-container>
-            <h2 class="text-center py-5">{{title}}</h2>
-            <v-divider></v-divider>
-            <div class="py-12">
+            <h2 class="headline font-weight-bold text-uppercase text-left pa-3">{{title}}</h2>
+
+            <div class="pa-3">
                 <slot></slot>
             </div>
         </v-container>

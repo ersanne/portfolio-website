@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import VueTypedJs from 'vue-typed-js'
-import PrismicVue from 'prismic-vue'
+import PrismicVue from '@prismicio/vue'
 import linkResolver from './service/prismic/link-resolver'
 // import VueGtag from "vue-gtag";
 

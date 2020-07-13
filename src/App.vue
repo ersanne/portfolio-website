@@ -1,9 +1,9 @@
 <template>
     <v-app dark>
         <AppBar></AppBar>
-        <v-content>
+        <v-main>
             <RouterView></RouterView>
-        </v-content>
+        </v-main>
         <Footer></Footer>
         <BottomNav></BottomNav>
 <!--        <CookieNotice></CookieNotice>-->
@@ -52,11 +52,11 @@
     };
 </script>
 
-<style>
-    .container, v-app-bar--fixed {
+<style scoped>
+    /deep/.container, v-app-bar--fixed {
         max-width: 1264px;
     }
-    .v-toolbar--fixed, .v-toolbar__content {
+    /deep/.v-toolbar--fixed, .v-toolbar__content {
         margin: 0 auto
     }
 </style>

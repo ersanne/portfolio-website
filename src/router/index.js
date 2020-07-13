@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMeta from 'vue-meta'
 import Home from '../views/Home.vue'
+import BlogPost from "../views/BlogPost.vue";
 
 Vue.use(VueRouter)
 Vue.use(VueMeta)
@@ -10,12 +11,13 @@ const routes = [
     {
         path: '*',
         name: 'Not Found',
-        component: () => import(/* webpackChunkName: "about" */ '../views/NotFound.vue')
+        component: () => import('../views/NotFound.vue'),
+        alias: '/not-found'
     },
     {
         path: '/preview',
         name: 'prismic-preview',
-        component: () => import(/* webpackChunkName: "about" */ '../views/prismic/Preview.vue')
+        component: () => import('../views/prismic/Preview.vue')
     },
     {
         path: '/',

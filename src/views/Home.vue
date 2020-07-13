@@ -18,7 +18,7 @@
     import About from "@/components/home/About";
     import Contact from "@/components/home/Contact";
     import Languages from "@/components/home/Languages";
-    import Skills from "@/components/home/TechnicalSkills";
+    import Skills from "@/components/home/TechSkills";
     import Education from "@/components/home/Education";
     import Experience from "@/components/home/Experience";
     import ButtonGoTop from "@/components/home/ButtonGoTop";
@@ -37,7 +37,7 @@
             Experience,
         },
         metaInfo: {
-            title: 'Home',
+            title: 'CV',
             meta: [
                 {'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8'},
                 {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -62,7 +62,6 @@
                 // Your twitter handle, if you have one.
                 {name: 'twitter:creator', content: '@ErikKonradSanne'},
                 {name: 'twitter:image:src', content: 'https://eriksanne.com/img/profile_pic.jpg'},
-
                 // Google / Schema.org markup:
                 {itemprop: 'name', content: 'Erik Sanne'},
                 {itemprop: 'description', content: 'Erik Sanne Homepage and Digital CV'},
