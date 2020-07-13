@@ -4,6 +4,7 @@
             fixed
             horizontal
             grow
+            hide-on-scroll
             class="hidden-md-and-up"
     >
         <v-row no-gutters justify="center">

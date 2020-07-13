@@ -1,20 +1,23 @@
 <template>
     <div class="blog">
-        <v-container v-if="hasContent">
-            <BlogFilter :tags="tags"></BlogFilter>
-            <BlogExpansionPanel></BlogExpansionPanel>
+        <v-container fluid v-if="hasContent">
+            <v-row>
+                <BlogFilter :tags="tags"></BlogFilter>
+            </v-row>
+            <BlogList></BlogList>
         </v-container>
     </div>
 </template>
 
 <script>
-    import BlogExpansionPanel from "@/components/blog/BlogExpansionPanel";
     import BlogFilter from "@/components/blog/BlogFilter";
+    import BlogList from "@/components/blog/BlogList";
+
     export default {
         name: "Blog",
-        components: {BlogFilter, BlogExpansionPanel},
+        components: {BlogList, BlogFilter},
         metaInfo: {
-            title: 'Home',
+            title: 'Blog',
             meta: [
                 {'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8'},
                 {name: 'viewport', content: 'width=device-width, initial-scale=1'},
