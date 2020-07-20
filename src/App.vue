@@ -1,11 +1,15 @@
 <template>
     <v-app dark>
-        <SummaryHeader v-if="$router.currentRoute.name === 'home'"></SummaryHeader>
-        <AppBar></AppBar>
-        <v-main>
+        <div v-if="$router.currentRoute.name === 'landing-page'">
             <RouterView></RouterView>
-        </v-main>
-        <Footer></Footer>
+        </div>
+        <div v-else>
+            <AppBar></AppBar>
+            <v-main>
+                <RouterView></RouterView>
+            </v-main>
+            <Footer></Footer>
+        </div>
 <!--        <BottomNav></BottomNav>-->
 <!--        <CookieNotice></CookieNotice>-->
     </v-app>
@@ -16,7 +20,6 @@
     import Footer from "@/components/Footer";
     // import CookieNotice from "@/components/CookieNotice";
     import AppBar from "@/components/nav/AppBar";
-    import SummaryHeader from "@/components/home/SummaryHeader";
 
     export default {
         name: 'App',
@@ -25,7 +28,6 @@
             titleTemplate: '%s - Erik Sanne',
         },
         components: {
-            SummaryHeader,
             AppBar,
             // CookieNotice,
             Footer,

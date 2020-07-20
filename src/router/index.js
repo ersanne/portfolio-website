@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import VueMeta from 'vue-meta'
 import Home from '../views/Home.vue'
 import BlogPost from "../views/BlogPost.vue";
+import LandingPage from "@/views/LandingPage";
 
 Vue.use(VueRouter)
 Vue.use(VueMeta)
@@ -21,6 +22,11 @@ const routes = [
     },
     {
         path: '/',
+        name: 'landing-page',
+        component: LandingPage
+    },
+    {
+        path: '/home',
         name: 'home',
         component: Home
     },

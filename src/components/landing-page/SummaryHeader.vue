@@ -1,15 +1,13 @@
 <template>
-    <v-img src="@/assets/hero.jpg" max-height="100vh" i>
+    <v-img src="@/assets/hero.jpg" max-height="100vh">
         <v-container fluid style="height: 100vh">
             <v-row align="center" justify="center" style="height: 100%">
 
                 <v-col cols="12" md="2" class="d-flex flex-column align-center justify-center">
-                    <!--                            style="background-color: rgba(0,0,0,0.5)">-->
-                    <v-avatar size="100%">
+                    <v-avatar size="200">
                         <v-img src="https://images.prismic.io/eriksannecom/498741f7-715a-4055-9afa-51a1bfcdbced_QONZ8vJF_400x400.jpg?auto=compress,format&rect=0,0,400,400&w=200&h=200"></v-img>
                     </v-avatar>
                 </v-col>
-                <!--                        <v-col cols="6" style="max-width: 560px; background-color: rgba(0,0,0,0.5)">-->
                 <v-col cols="12" md="6" style="max-width: 560px;">
                     <v-row style="min-height: 170px;">
                         <v-col cols="12">
@@ -25,10 +23,10 @@
                     </v-row>
                     <v-row justify="center">
                         <v-col cols="12" md="4">
-                            <v-btn block outlined>About</v-btn>
+                            <v-btn block outlined to="home">About</v-btn>
                         </v-col>
                         <v-col cols="12" md="4">
-                            <v-btn block outlined>Work</v-btn>
+                            <v-btn block outlined to="projects">Projects</v-btn>
                         </v-col>
                         <v-col cols="12" md="4">
                             <v-btn block outlined to="blog">Blog</v-btn>
