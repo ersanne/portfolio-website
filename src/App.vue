@@ -10,13 +10,13 @@
             </v-main>
             <Footer></Footer>
 <!--        </div>-->
-<!--        <BottomNav></BottomNav>-->
+        <BottomNav></BottomNav>
 <!--        <CookieNotice></CookieNotice>-->
     </v-app>
 </template>
 
 <script>
-    // import BottomNav from "@/components/nav/BottomNav";
+    import BottomNav from "@/components/nav/BottomNav";
     import Footer from "@/components/Footer";
     // import CookieNotice from "@/components/CookieNotice";
     import AppBar from "@/components/nav/AppBar";
@@ -31,7 +31,7 @@
             AppBar,
             // CookieNotice,
             Footer,
-            // BottomNav
+            BottomNav
         },
         data: () => ({
             fab: false

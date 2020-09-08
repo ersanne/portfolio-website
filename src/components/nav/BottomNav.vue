@@ -20,8 +20,8 @@
                     {{ link.name }}
                 </v-btn>
             </v-col>
-            <!--<v-col cols="5" xs="4" sm="3" class="pl-3" align-self="center">-->
-            <v-col cols="auto" align-self="center"> <!-- Until Nav links are re-enabled -->
+            <v-col cols="5" xs="4" sm="3" class="pl-3" align-self="center">
+<!--            <v-col cols="auto" align-self="center"> &lt;!&ndash; Until Nav links are re-enabled &ndash;&gt;-->
                 <v-switch
                         v-model="$store.state.darkMode"
                         label="Dark Mode"
