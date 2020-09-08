@@ -7,6 +7,7 @@ import VueTypedJs from 'vue-typed-js'
 import PrismicVue from '@prismicio/vue'
 import linkResolver from './service/prismic/link-resolver'
 // import VueGtag from "vue-gtag";
+import VueHighlightJS from 'vue-highlightjs'
 
 import './registerServiceWorker'
 
@@ -18,10 +19,13 @@ Vue.use(PrismicVue, {
     linkResolver,
     runtimeCompiler: true
 });
+
 // Vue.use(VueGtag, {
 //     config: { id: "UA-139713980-1" },
 //     bootstrap: false,
 // }, router)
+
+Vue.use(VueHighlightJS)
 
 new Vue({
     router,
