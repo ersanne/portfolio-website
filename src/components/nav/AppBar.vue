@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar>
+    <v-app-bar app>
         <div class="d-flex align-center">
             <router-link to="/">
                 <v-img

@@ -4,7 +4,7 @@
                 @click="goToPost">
             <v-img
                     class="white--text align-end"
-                    max-height="350"
+                    height="250"
                     src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
             >
                 <v-card-title>

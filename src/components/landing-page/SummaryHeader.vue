@@ -23,7 +23,7 @@
                     </v-row>
                     <v-row justify="center">
                         <v-col cols="12" md="4">
-                            <v-btn block outlined to="home">About</v-btn>
+                            <v-btn block outlined to="about">About</v-btn>
                         </v-col>
                         <v-col cols="12" md="4">
                             <v-btn block outlined to="projects">Projects</v-btn>

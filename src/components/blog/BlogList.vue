@@ -1,8 +1,10 @@
 <template>
     <div v-if="hasContent">
+      <v-container>
         <v-row v-for="(item, i) in items" :key="i">
-            <BlogCard :slug="item.uid" :data="item.data"></BlogCard>
+          <BlogCard :slug="item.uid" :data="item.data"></BlogCard>
         </v-row>
+      </v-container>
     </div>
 </template>
 

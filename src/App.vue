@@ -1,15 +1,15 @@
 <template>
     <v-app dark>
-        <div v-if="$router.currentRoute.name === 'landing-page'">
-            <RouterView></RouterView>
-        </div>
-        <div v-else>
+<!--        <div v-if="$router.currentRoute.name === 'home'">-->
+<!--            <RouterView></RouterView>-->
+<!--        </div>-->
+<!--        <div v-else>-->
             <AppBar></AppBar>
             <v-main>
                 <RouterView></RouterView>
             </v-main>
             <Footer></Footer>
-        </div>
+<!--        </div>-->
 <!--        <BottomNav></BottomNav>-->
 <!--        <CookieNotice></CookieNotice>-->
     </v-app>
@@ -58,10 +58,5 @@
 </script>
 
 <style scoped>
-    /deep/.container, v-app-bar--fixed {
-        max-width: 1264px;
-    }
-    /deep/.v-toolbar--fixed, .v-toolbar__content {
-        margin: 0 auto
-    }
+
 </style>
