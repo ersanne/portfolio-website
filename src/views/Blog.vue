@@ -1,21 +1,24 @@
 <template>
     <div class="blog">
         <v-container fluid v-if="hasContent">
-            <v-row>
-                <BlogFilter :tags="tags"></BlogFilter>
-            </v-row>
+<!--            <v-row>-->
+<!--                <BlogFilter :tags="tags"></BlogFilter>-->
+<!--            </v-row>-->
             <BlogList></BlogList>
         </v-container>
     </div>
 </template>
 
 <script>
-    import BlogFilter from "@/components/blog/BlogFilter";
+    // import BlogFilter from "@/components/blog/BlogFilter";
     import BlogList from "@/components/blog/BlogList";
 
     export default {
         name: "Blog",
-        components: {BlogList, BlogFilter},
+        components: {
+          BlogList,
+          // BlogFilter
+        },
         metaInfo: {
             title: 'Blog',
             meta: [
