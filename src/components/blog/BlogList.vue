@@ -29,7 +29,6 @@
                 ).then((document) => {
                     if (document) {
                         this.items = document.results;
-                        console.log(this.items)
                         this.checkForContent();
                     }
                 })

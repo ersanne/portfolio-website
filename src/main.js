@@ -8,6 +8,7 @@ import PrismicVue from '@prismicio/vue'
 import linkResolver from './service/prismic/link-resolver'
 // import VueGtag from "vue-gtag";
 import VueHighlightJS from 'vue-highlightjs'
+import VueDisqus from "vue-disqus";
 
 import './registerServiceWorker'
 
@@ -26,6 +27,10 @@ Vue.use(PrismicVue, {
 // }, router)
 
 Vue.use(VueHighlightJS)
+
+Vue.use(VueDisqus, {
+    shortname: 'erik-sanne'
+})
 
 new Vue({
     router,
