@@ -54,7 +54,7 @@
     </v-row>
     <!-- Slice zone end -->
     <div class="comments">
-      <Disqus shortname="erik-sanne"></Disqus>
+      <Disqus shortname="erik-sanne" ref="test"></Disqus>
     </div>
   </v-container>
 </template>

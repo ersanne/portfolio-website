@@ -33,30 +33,20 @@
                 CV
             </v-btn>
         </div>
-        <v-switch
-                class="hidden-sm-and-down"
-                v-model="$store.state.darkMode"
-                label="Dark Mode"
-                hide-details
-                @click.stop.prevent="toggleTheme()"
-        ></v-switch>
+        <DarkModeSwitch class="hidden-sm-and-down"></DarkModeSwitch>
     </v-app-bar>
 </template>
 
 <script>
     import {mapState} from 'vuex'
+    import DarkModeSwitch from "@/components/nav/DarkModeSwitch";
 
     export default {
         name: "AppBar",
-        computed: mapState([
+      components: {DarkModeSwitch},
+      computed: mapState([
             'navLinks'
         ]),
-        methods: {
-            toggleTheme() {
-                this.$store.dispatch('toggleDarkMode')
-                this.$store.dispatch('disablePreferredColorScheme')
-            }
-        }
     }
 </script>
 
