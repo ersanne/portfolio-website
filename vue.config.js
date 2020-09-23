@@ -13,6 +13,12 @@ module.exports = {
       "appleTouchIcon": "img/icons/apple-touch-icon-152x152.png",
       "msTileImage": "img/icons/msapplication-icon-144x144.png"
     },
-    "start_url": "/"
+    "orientation": "portrait",
+    "start_url": "/",
+    "workboxPluginMode": "GenerateSW",
+    "workboxOptions": {
+      "exclude": [/\.map$/, /_redirects/],
+      // ...other Workbox options...
+    }
   }
 }
