@@ -1,61 +1,67 @@
 <template>
   <v-container v-if="hasContent">
+    <h1 v-text="plainTitle"></h1>
     <v-row no-gutters>
       <v-col>
-        <h1 v-text="plainTitle"></h1>
+        <h3 class="subtitle-1 pb-4 shrink" v-text="plainSubtitle"></h3>
       </v-col>
-    </v-row>
-    <v-row no-gutters>
-      <v-col>
-        <h3 class="subtitle-1" v-text="plainSubtitle"></h3>
-      </v-col>
-      <v-btn icon
+      <v-btn icon small
              :href="`https:twitter.com/intent/tweet?text=${encodeURIComponent(`${this.$prismic.richTextAsPlain(this.post.title)} by @ErikKonradSanne `)}${shareUrl}`"
              target="_blank">
         <v-icon>mdi-twitter</v-icon>
       </v-btn>
-      <v-btn icon
+      <v-btn icon small
              :href="`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`"
              target="_blank">
         <v-icon>mdi-linkedin</v-icon>
       </v-btn>
-      <v-btn icon
+      <v-btn icon small
              :href="`https://www.facebook.com/dialog/share?app_id=316255176143959&display=popup&href=${shareUrl}`"
              target="_blank">
         <v-icon>mdi-facebook</v-icon>
       </v-btn>
     </v-row>
-    <v-row>
-
+    <v-row no-gutters>
+      <v-col>
+        <v-img v-if="post.hero_img.url"
+               :src="post.hero_img.url"
+               :alt="post.hero_img.alt">
+        </v-img>
+      </v-col>
     </v-row>
-    <div></div>
     <!-- Slice zone-->
     <v-row v-for="(slice, i) in post.body"
            :key="i">
       <!-- Text section -->
       <v-col v-if="slice.slice_type === 'text'">
-        <prismic-rich-text :field="slice.primary.title"></prismic-rich-text>
-        <prismic-rich-text :field="slice.primary.text"></prismic-rich-text>
+        <prismic-rich-text v-if="slice.primary.title" :field="slice.primary.title"
+                           class="mb-2"></prismic-rich-text>
+        <prismic-rich-text v-if="slice.primary.text" :field="slice.primary.text"></prismic-rich-text>
       </v-col>
       <!-- Code section -->
       <v-col v-else-if="slice.slice_type === 'code_snippet'">
-        <prismic-rich-text :field="slice.primary.title"></prismic-rich-text>
-        <pre v-highlightjs="$prismic.richTextAsPlain(slice.primary.code)"><code class="java"></code></pre>
-        <prismic-rich-text :field="slice.primary.caption"></prismic-rich-text>
+        <prismic-rich-text v-if="slice.primary.title" :field="slice.primary.title"
+                           class="mb-2"></prismic-rich-text>
+        <pre v-if="slice.primary.code" v-highlightjs="$prismic.richTextAsPlain(slice.primary.code)"><code
+            class="java"></code></pre>
+        <prismic-rich-text v-if="slice.primary.caption" :field="slice.primary.caption"></prismic-rich-text>
       </v-col>
       <!-- Image section -->
       <v-col v-else-if="slice.slice_type === 'image'">
-        <prismic-rich-text :field="slice.primary.title"></prismic-rich-text>
-        <v-img :src="slice.primary.image.url"
+        <prismic-rich-text v-if="slice.primary.title" :field="slice.primary.title"
+                           class="mb-2"></prismic-rich-text>
+        <v-img v-if="slice.primary.image.url" :src="slice.primary.image.url"
                :alt="slice.primary.image.alt"
         ></v-img>
-        <prismic-rich-text :field="slice.primary.caption"></prismic-rich-text>
+        <prismic-rich-text v-if="slice.primary.caption" :field="slice.primary.caption"></prismic-rich-text>
       </v-col>
     </v-row>
     <!-- Slice zone end -->
-    <div class="comments">
-      <Disqus shortname="erik-sanne" ref="test"></Disqus>
-    </div>
+    <v-row class="comments">
+      <v-col>
+        <Disqus shortname="erik-sanne"></Disqus>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -64,7 +70,7 @@ export default {
   name: "BlogPost",
   metaInfo() {
     return {
-      title: 'Home',
+      title: this.hasContent ? this.plainTitle : 'Erik Sanne Blog',
       meta: [
         {'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8'},
         {name: 'viewport', content: 'width=device-width, initial-scale=1'},

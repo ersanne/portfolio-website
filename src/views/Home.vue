@@ -2,7 +2,7 @@
   <div class="home-content" v-if="hasContent">
     <Banner :data="sections.banner"></Banner>
     <About :data="sections.about"></About>
-    <Skills :data="sections.tech_skills"></Skills>
+    <TechSkills :data="sections.tech_skills"></TechSkills>
     <SoftSkills :data="sections.soft_skills"></SoftSkills>
     <Languages :data="sections.languages"></Languages>
     <Experience :data="sections.experience"></Experience>
@@ -19,7 +19,7 @@ import SoftSkills from "@/components/home/SoftSkills";
 import About from "@/components/home/About";
 import Contact from "@/components/home/Contact";
 import Languages from "@/components/home/Languages";
-import Skills from "@/components/home/TechSkills";
+import TechSkills from "@/components/home/TechSkills";
 import Education from "@/components/home/Education";
 import Experience from "@/components/home/Experience";
 import ButtonGoTop from "@/components/home/ButtonGoTop";
@@ -35,7 +35,7 @@ export default {
     About,
     Contact,
     Languages,
-    Skills,
+    TechSkills,
     Education,
     Experience,
   },
@@ -99,7 +99,7 @@ export default {
               this.sections.banner.banner_image = document.data.banner_image;
               this.sections.banner.banner_subtitles = document.data.banner_subtitles;
               this.sections.about = document.data.about;
-              this.sections.tech_skills = document.data.tech_skills;
+              this.sections.tech_skills = document.data.body; //Slice for Tech skill categories (Only slice in type)
               this.sections.soft_skills = document.data.soft_skills;
               this.sections.languages = document.data.languages;
               this.sections.experience = document.data.experience;

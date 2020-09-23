@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMeta from 'vue-meta'
 import Home from '../views/Home.vue'
-import BlogPost from "../views/BlogPost.vue";
+// import BlogPost from "../views/BlogPost.vue";
 // import LandingPage from "@/views/LandingPage";
 
 Vue.use(VueRouter)
@@ -30,21 +30,21 @@ const routes = [
         name: 'home',
         component: Home
     },
-    {
-        path: '/projects',
-        name: 'projects',
-        component: () => import('../views/Projects.vue')
-    },
-    {
-        path: '/blog',
-        name: 'blog',
-        component: () => import('../views/Blog.vue')
-    },
-    {
-        path: '/blog/:slug',
-        name: 'blog-post',
-        component: BlogPost
-    }
+    // {
+    //     path: '/projects',
+    //     name: 'projects',
+    //     component: () => import('../views/Projects.vue')
+    // },
+    // {
+    //     path: '/blog',
+    //     name: 'blog',
+    //     component: () => import('../views/Blog.vue')
+    // },
+    // {
+    //     path: '/blog/:slug',
+    //     name: 'blog-post',
+    //     component: BlogPost
+    // }
 ]
 
 const router = new VueRouter({

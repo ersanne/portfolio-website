@@ -1,12 +1,10 @@
 <template>
-  <SectionLayout id="latest_blogs" title="Latest Blogs">
-    <v-item-group multiple>
-      <v-row>
-        <v-col :cols="12 / items.length" v-for="(item, i) in items" :key="i">
-          <BlogCard :slug="item.uid" :data="item.data"></BlogCard>
-        </v-col>
-      </v-row>
-    </v-item-group>
+  <SectionLayout v-if="hasContent && items.length > 0" id="latest_blogs" title="Latest Blogs">
+    <v-row>
+      <v-col :cols="12 / items.length" v-for="(item, i) in items" :key="i">
+        <BlogCard :slug="item.uid" :data="item.data"></BlogCard>
+      </v-col>
+    </v-row>
   </SectionLayout>
 </template>
 

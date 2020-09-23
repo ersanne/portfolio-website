@@ -1,5 +1,8 @@
 <template>
-    <h1>404 Not Found</h1>
+  <v-container class="text-center">
+    <h1> 404 Not Found</h1>
+    <router-link to="/"><h3>Back to home</h3></router-link>
+  </v-container>
 </template>
 
 <script>

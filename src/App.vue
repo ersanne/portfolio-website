@@ -51,8 +51,6 @@
                 // Default (when Media-Queries are not supported or theme was previously set)
                 this.$vuetify.theme.dark = this.$store.getters.darkMode
             }
-
-
         }
     };
 </script>
