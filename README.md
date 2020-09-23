@@ -1,6 +1,6 @@
 <h3 align="center">Digital CV / Portfolio / Blog for and by Erik Sanne</h3>
 <p align="center">
-   A hobby project for a dynamic and modern online presence
+   A simple hobby project to build a dynamic and modern online presence for myself
 </p>
 
 ---
