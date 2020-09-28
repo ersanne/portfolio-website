@@ -41,9 +41,14 @@
             data: Array
         },
         methods: {
-            formatDate: function (date) {
+            formatDate: function (rawDate) {
                 // TODO make this a static helper outside components
-                return moment(date).format('MMM YYYY')
+              let date = moment(rawDate)
+              if(date.isValid()) {
+                return date.format('MMM YYYY')
+              } else {
+                return 'Present'
+              }
             }
         }
     }
