@@ -1,8 +1,14 @@
 <template>
   <SectionLayout v-if="hasContent && items.length > 0" id="latest_blogs" title="Latest Blogs">
     <v-row>
-      <v-col :cols="12 / items.length" v-for="(item, i) in items" :key="i">
+      <v-col :cols="11 / items.length" v-for="(item, i) in items" :key="i">
         <BlogCard :slug="item.uid" :data="item.data"></BlogCard>
+      </v-col>
+      <v-col cols="1">
+        <v-btn rounded style="height: 100%">
+          More<br>
+          <v-icon>fa-arrow-right</v-icon>
+        </v-btn>
       </v-col>
     </v-row>
   </SectionLayout>

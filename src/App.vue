@@ -1,6 +1,6 @@
 <template>
     <v-app dark>
-<!--        <div v-if="$router.currentRoute.name === 'home'">-->
+<!--        <div v-if="$router.currentRoute.name === 'landing-page'">-->
 <!--            <RouterView></RouterView>-->
 <!--        </div>-->
 <!--        <div v-else>-->

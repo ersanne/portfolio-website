@@ -1,3 +1,4 @@
+<script src="../../store/index.js"></script>
 <template>
   <v-switch
       v-model="$store.state.darkMode"

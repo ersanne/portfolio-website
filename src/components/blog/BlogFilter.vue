@@ -18,6 +18,7 @@
                             close
                             @click="data.select"
                             @click:close="remove(data.item)"
+                            :color="data.item.color"
                     >
                         <v-icon>{{data.item.icon}}</v-icon><span>{{ data.item.tag }}</span>
                     </v-chip>

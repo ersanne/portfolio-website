@@ -1,6 +1,6 @@
 <template>
   <div class="home-content" v-if="hasContent">
-    <Banner :data="sections.banner"></Banner>
+    <Banner :key="this.$vuetify.theme.dark" :data="sections.banner"></Banner>
     <About :data="sections.about"></About>
     <TechSkills :data="sections.tech_skills"></TechSkills>
     <SoftSkills :data="sections.soft_skills"></SoftSkills>
