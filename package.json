@@ -14,7 +14,7 @@
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^3.0.0",
     "register-service-worker": "^1.6.2",
-    "three": "^0.128.0",
+    "three": "^0.137.0",
     "vanta": "^0.5.21",
     "vue": "^2.6.11",
     "vue-cookie-law": "^1.12.0",
