@@ -1,1 +1,0 @@
-import{j as e}from"./index-CBp9DHz_.js";const o=()=>e.jsxs("footer",{className:"section-container pt-10 pb-10 text-center",children:[e.jsx("div",{className:"h-px w-full bg-border/50 mb-8"}),e.jsxs("p",{className:"text-sm text-muted-foreground font-body",children:["© ",new Date().getFullYear()," Erik Sanne. Built with ☕ and code."]})]});export{o as default};
