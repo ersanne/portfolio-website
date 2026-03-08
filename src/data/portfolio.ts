@@ -12,7 +12,7 @@ export const hero = {
 };
 
 export const about =
-  "Backend Tech Lead with over five years of experience building scalable, efficient backend systems, primarily in Go. My career spans fintech, banking, and cybersecurity, where I've honed a well-rounded approach to solving complex technical challenges while delivering secure and high-performing solutions. I'm passionate about driving innovation, refining system architecture, and creating reliable software that aligns with business objectives and technical excellence.";
+  "Backend Tech Lead with over six years of experience designing and building scalable backend systems, primarily in Go. My career spans fintech, banking, and cybersecurity, where I've developed a strong foundation in distributed systems, cloud-native architecture, and technical leadership. I'm passionate about mentoring engineers, driving architectural decisions, and delivering reliable, high-performing software.";
 
 export const socials = [
   { type: "github" as const, href: "https://github.com/ersanne", label: "GitHub" },
@@ -29,12 +29,14 @@ export interface SkillCategory {
 }
 
 export const skillCategories: SkillCategory[] = [
-  { label: "Programming", skills: ["Go", "Java", "Python", "SQL"] },
+  { label: "Programming", skills: ["Go", "Python", "SQL"] },
   { label: "Cloud & Infrastructure", skills: ["Kubernetes", "Google Cloud Platform", "Terraform", "Docker"] },
-  { label: "Back-end", skills: ["Spring-Boot", "REST APIs", "Microservices"] },
-  { label: "Front-end", skills: ["Vue.js", "Vuetify", "HTML5", "CSS"] },
-  { label: "Databases", skills: ["Postgres", "MongoDB", "MySQL", "DB2"] },
-  { label: "DevOps", skills: ["Git", "CI/CD", "Jenkins", "RedHat OpenShift"] },
+  { label: "Back-end", skills: ["gRPC/Protobuf", "REST APIs", "OpenAPI", "Microservices", "Distributed Systems"] },
+  { label: "Architecture", skills: ["System Design", "API Design", "Clean Architecture", "Event-Driven Architecture"] },
+  { label: "Front-end", skills: ["HTML", "CSS", "JavaScript", "TypeScript"] },
+  { label: "Databases", skills: ["Postgres", "MongoDB", "MySQL"] },
+  { label: "AI", skills: ["LLM Integration", "Prompt Engineering", "AI-Assisted Development"] },
+  { label: "DevOps", skills: ["Git", "GitLab CI/CD", "ArgoCD", "Helm"] },
 ];
 
 export interface Role {
@@ -60,13 +62,13 @@ export const professionalExperience: Experience[] = [
       {
         title: "Tech Lead Backend Development",
         period: "Jul 2025 — Present",
-        description: "Leading backend development for threat detection and incident response tooling. Driving architecture decisions, mentoring engineers, and ensuring delivery of scalable, secure backend services.",
+        description: "Leading backend development for ASGARD Management Center and Analysis Cockpit — Nextron's incident response and threat analysis platform, supporting scanning and response orchestration across up to one million endpoints. Driving architecture and technical design decisions, shaping SDLC processes, and contributing to product design. Mentoring engineers and facilitating cross-team collaboration.",
         skills: ["Go", "Kubernetes", "GCP", "Docker"],
       },
       {
         title: "Senior Software Engineer",
         period: "Jun 2024 — Jul 2025",
-        description: "Designed and implemented scalable backend services for cybersecurity tooling. Improved CI/CD pipelines for faster delivery cycles and contributed to threat detection infrastructure.",
+        description: "Built and improved backend services for ASGARD's endpoint scanning infrastructure and log analysis platform. Introduced architectural improvements, established testing standards, and drove code quality practices across the backend codebase.",
         skills: ["Go", "Python", "Docker", "CI/CD"],
       },
     ],
@@ -86,7 +88,7 @@ export const professionalExperience: Experience[] = [
         title: "Software Engineer II",
         period: "May 2022 — Mar 2023",
         description: "Built and maintained data-driven microservices powering ESG analytics. Developed RESTful APIs and contributed to data pipeline architecture for processing large financial datasets.",
-        skills: ["Go", "Spring-Boot", "Postgres", "Docker", "SQL"],
+        skills: ["Go", "Postgres", "Docker", "SQL"],
       },
     ],
   },
@@ -99,7 +101,7 @@ export const professionalExperience: Experience[] = [
         title: "Software Engineer",
         period: "Feb 2021 — Apr 2022",
         description: "Designed software solutions for Banking & Finance clients. Led the design of a company-wide webhook system using AWS Lambda. Designed and implemented a JSON data store with custom data ingestion, and built supporting infrastructure in RedHat OpenShift with Azure.",
-        skills: ["Java", "AWS Lambda", "OpenShift", "Azure", "SQL"],
+        skills: ["Java", "Spring-Boot", "AWS Lambda", "OpenShift", "Azure", "SQL"],
       },
     ],
   },
@@ -190,12 +192,7 @@ export const languages: Language[] = [
   { name: "German", level: "Native / Bilingual", flag: "🇩🇪" },
 ];
 
-export const softSkills: string[] = [
-  "Able to work independently or as part of a wider team",
-  "Flexible and quick to adapt to any new environment",
-  "Experience with both Agile and Waterfall methodologies",
-  "Excellent problem solver",
-];
+export const softSkills: string[] = [];
 
 export interface Project {
   title: string;
@@ -206,32 +203,11 @@ export interface Project {
 }
 
 // Add your projects here. The section only shows when this array is non-empty.
-export const projects: Project[] = [
-  {
-    title: "Threat Intelligence Dashboard",
-    description: "Real-time dashboard for visualising and correlating threat intelligence feeds. Features automated alert triage and customisable detection rules.",
-    skills: ["Go", "Python", "Postgres", "Docker"],
-    github: "https://github.com/ersanne",
-  },
-  {
-    title: "ESG Data Pipeline",
-    description: "High-throughput data pipeline for ingesting and normalising ESG metrics from multiple financial data providers.",
-    skills: ["Go", "Python", "Terraform", "CI/CD"],
-  },
-  {
-    title: "Personal Portfolio",
-    description: "This website — a modern, responsive developer portfolio built with React and Tailwind CSS.",
-    skills: ["React", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/ersanne",
-    live: "https://eriksanne.com",
-  },
-];
+export const projects: Project[] = [];
 
 export interface Certification {
   name: string;
   detail?: string;
 }
 
-export const certifications: Certification[] = [
-  { name: "IELTS Academic", detail: "Score: 8" },
-];
+export const certifications: Certification[] = [];
