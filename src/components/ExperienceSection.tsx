@@ -9,7 +9,7 @@ const RoleDetail = ({ role }: { role: Role }) => (
       <h4 className="font-heading font-medium text-foreground text-sm">{role.title}</h4>
       <span className="text-xs font-heading text-primary whitespace-nowrap">{role.period}</span>
     </div>
-    <p className="text-sm text-muted-foreground leading-relaxed">{role.description}</p>
+    <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{role.description}</p>
     <div className="flex flex-wrap gap-2 mt-3">
       {role.skills.map((skill) => (
         <span
@@ -68,13 +68,43 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
         </div>
 
         <div className={`collapsible-panel ${open ? "open" : ""}`}>
-          <div>
+          <div onClick={(e) => e.stopPropagation()}>
             <div className="px-5 pb-5 pt-0 border-t border-border/30 mt-0">
-              <div className="divide-y divide-border/30 mt-4">
-                {exp.roles.map((role, i) => (
-                  <RoleDetail key={i} role={role} />
-                ))}
-              </div>
+              {exp.description ? (
+                <div className="mt-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{exp.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {exp.skills?.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2.5 py-1 text-xs rounded-md bg-primary/10 text-primary font-heading"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ) : exp.roles.length === 1 ? (
+                <div className="mt-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{exp.roles[0].description}</p>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {exp.roles[0].skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2.5 py-1 text-xs rounded-md bg-primary/10 text-primary font-heading"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="divide-y divide-border/30 mt-4">
+                  {exp.roles.map((role, i) => (
+                    <RoleDetail key={i} role={role} />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
