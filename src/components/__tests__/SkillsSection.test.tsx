@@ -20,7 +20,7 @@ describe("SkillsSection", () => {
     render(<SkillsSection />);
     skillCategories.forEach((cat) => {
       cat.skills.forEach((skill) => {
-        expect(screen.getByText(skill)).toBeInTheDocument();
+        expect(screen.getByText(skill.name)).toBeInTheDocument();
       });
     });
   });

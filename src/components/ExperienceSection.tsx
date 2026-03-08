@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useInView } from "@/hooks/use-in-view";
 import { professionalExperience, earlyCareer, type Experience, type Role } from "@/data/portfolio";
 
 const RoleDetail = ({ role }: { role: Role }) => (
@@ -25,14 +25,13 @@ const RoleDetail = ({ role }: { role: Role }) => (
 
 const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number; isLast: boolean }) => {
   const [open, setOpen] = useState(false);
+  const { ref, inView } = useInView("0px");
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="relative md:pl-8"
+    <div
+      ref={ref}
+      className={`relative md:pl-8 animate-on-scroll ${inView ? "in-view" : ""}`}
+      style={{ transitionDelay: `${index * 0.05}s` }}
     >
       {/* Dot */}
       <div className="absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-2 border-primary bg-background hidden md:block z-10" />
@@ -63,36 +62,24 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
               <p className="text-xs text-muted-foreground pl-3.5">{exp.location}</p>
             </div>
           </div>
-          <motion.div
-            animate={{ rotate: open ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
-            className="text-muted-foreground flex-shrink-0"
-          >
+          <div className={`chevron-icon text-muted-foreground flex-shrink-0 ${open ? "open" : ""}`}>
             <ChevronDown size={16} />
-          </motion.div>
+          </div>
         </div>
 
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="overflow-hidden"
-            >
-              <div className="px-5 pb-5 pt-0 border-t border-border/30 mt-0">
-                <div className="divide-y divide-border/30 mt-4">
-                  {exp.roles.map((role, i) => (
-                    <RoleDetail key={i} role={role} />
-                  ))}
-                </div>
+        <div className={`collapsible-panel ${open ? "open" : ""}`}>
+          <div>
+            <div className="px-5 pb-5 pt-0 border-t border-border/30 mt-0">
+              <div className="divide-y divide-border/30 mt-4">
+                {exp.roles.map((role, i) => (
+                  <RoleDetail key={i} role={role} />
+                ))}
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -106,26 +93,25 @@ const Timeline = ({ items, offset = 0 }: { items: Experience[]; offset?: number 
   </div>
 );
 
-const ExperienceSection = () => (
-  <section id="experience" className="section-container">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5 }}
-    >
-      <h2 className="text-3xl font-bold font-heading mb-2">
-        <span className="text-primary font-normal text-lg mr-2">03.</span>Experience
-      </h2>
-      <div className="h-px w-24 bg-primary/30 mb-10" />
-    </motion.div>
+const ExperienceSection = () => {
+  const { ref, inView } = useInView();
 
-    <h3 className="text-sm font-heading text-primary uppercase tracking-wider mb-6">Professional</h3>
-    <Timeline items={professionalExperience} />
+  return (
+    <section id="experience" className="section-container">
+      <div ref={ref} className={`animate-on-scroll ${inView ? "in-view" : ""}`}>
+        <h2 className="text-3xl font-bold font-heading mb-2">
+          <span className="text-primary font-normal text-lg mr-2">03.</span>Experience
+        </h2>
+        <div className="h-px w-24 bg-primary/30 mb-10" />
+      </div>
 
-    <h3 className="text-sm font-heading text-primary uppercase tracking-wider mb-6 mt-14">Internships & Early Career</h3>
-    <Timeline items={earlyCareer} offset={professionalExperience.length} />
-  </section>
-);
+      <h3 className="text-sm font-heading text-primary uppercase tracking-wider mb-6">Professional</h3>
+      <Timeline items={professionalExperience} />
+
+      <h3 className="text-sm font-heading text-primary uppercase tracking-wider mb-6 mt-14">Internships & Early Career</h3>
+      <Timeline items={earlyCareer} offset={professionalExperience.length} />
+    </section>
+  );
+};
 
 export default ExperienceSection;

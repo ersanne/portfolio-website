@@ -23,20 +23,78 @@ export const socials = [
 
 export type SocialType = (typeof socials)[number]["type"];
 
+// ── Icon imports (co-located with skill data for single-source-of-truth) ──
+import type { IconType } from "react-icons";
+import {
+  Code2, Cloud, Server, Layout, Database, GitBranch, Blocks, BrainCircuit,
+} from "lucide-react";
+import {
+  SiGo, SiPython, SiKubernetes, SiGooglecloud, SiTerraform, SiDocker,
+  SiOpenapiinitiative, SiHtml5, SiCss, SiJavascript, SiTypescript,
+  SiPostgresql, SiMongodb, SiMysql,
+  SiGit, SiGitlab, SiArgo, SiHelm, SiOpenai,
+} from "react-icons/si";
+import { TbApi, TbSql, TbNetwork, TbSitemap, TbSparkles, TbRobot } from "react-icons/tb";
+import { VscServerProcess } from "react-icons/vsc";
+
+export interface Skill {
+  name: string;
+  icon?: IconType;
+}
+
 export interface SkillCategory {
   label: string;
-  skills: string[];
+  icon: IconType;
+  skills: Skill[];
 }
 
 export const skillCategories: SkillCategory[] = [
-  { label: "Programming", skills: ["Go", "Python", "SQL"] },
-  { label: "Cloud & Infrastructure", skills: ["Kubernetes", "Google Cloud Platform", "Terraform", "Docker"] },
-  { label: "Back-end", skills: ["gRPC/Protobuf", "REST APIs", "OpenAPI", "Microservices", "Distributed Systems"] },
-  { label: "Architecture", skills: ["System Design", "API Design", "Clean Architecture", "Event-Driven Architecture"] },
-  { label: "Front-end", skills: ["HTML", "CSS", "JavaScript", "TypeScript"] },
-  { label: "Databases", skills: ["Postgres", "MongoDB", "MySQL"] },
-  { label: "AI", skills: ["LLM Integration", "Prompt Engineering", "AI-Assisted Development"] },
-  { label: "DevOps", skills: ["Git", "GitLab CI/CD", "ArgoCD", "Helm"] },
+  { label: "Programming", icon: Code2, skills: [
+    { name: "Go", icon: SiGo },
+    { name: "Python", icon: SiPython },
+    { name: "SQL", icon: TbSql },
+  ]},
+  { label: "Cloud & Infrastructure", icon: Cloud, skills: [
+    { name: "Kubernetes", icon: SiKubernetes },
+    { name: "Google Cloud Platform", icon: SiGooglecloud },
+    { name: "Terraform", icon: SiTerraform },
+    { name: "Docker", icon: SiDocker },
+  ]},
+  { label: "Back-end", icon: Server, skills: [
+    { name: "gRPC/Protobuf", icon: TbApi },
+    { name: "REST APIs", icon: TbApi },
+    { name: "OpenAPI", icon: SiOpenapiinitiative },
+    { name: "Microservices", icon: VscServerProcess },
+    { name: "Distributed Systems", icon: TbNetwork },
+  ]},
+  { label: "Architecture", icon: Blocks as unknown as IconType, skills: [
+    { name: "System Design", icon: TbSitemap },
+    { name: "API Design", icon: TbApi },
+    { name: "Clean Architecture", icon: Blocks as unknown as IconType },
+    { name: "Event-Driven Architecture", icon: TbSparkles },
+  ]},
+  { label: "Front-end", icon: Layout, skills: [
+    { name: "HTML", icon: SiHtml5 },
+    { name: "CSS", icon: SiCss },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "TypeScript", icon: SiTypescript },
+  ]},
+  { label: "Databases", icon: Database, skills: [
+    { name: "Postgres", icon: SiPostgresql },
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "MySQL", icon: SiMysql },
+  ]},
+  { label: "AI", icon: BrainCircuit, skills: [
+    { name: "LLM Integration", icon: SiOpenai },
+    { name: "Prompt Engineering", icon: TbRobot },
+    { name: "AI-Assisted Development", icon: TbSparkles },
+  ]},
+  { label: "DevOps", icon: GitBranch, skills: [
+    { name: "Git", icon: SiGit },
+    { name: "GitLab CI/CD", icon: SiGitlab },
+    { name: "ArgoCD", icon: SiArgo },
+    { name: "Helm", icon: SiHelm },
+  ]},
 ];
 
 export interface Role {
@@ -191,8 +249,6 @@ export const languages: Language[] = [
   { name: "English", level: "Native / Bilingual", flag: "🇬🇧" },
   { name: "German", level: "Native / Bilingual", flag: "🇩🇪" },
 ];
-
-export const softSkills: string[] = [];
 
 export interface Project {
   title: string;

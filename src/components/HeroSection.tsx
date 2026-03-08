@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
 import { Download } from "lucide-react";
-import portrait from "@/assets/erik-portrait.jpg";
+import portrait from "@/assets/erik-portrait.webp";
 import { Github, Linkedin, Twitter, Mail, type LucideIcon } from "lucide-react";
 import { hero, socials, type SocialType } from "@/data/portfolio";
 
@@ -19,41 +18,21 @@ const HeroSection = () => (
     }} />
 
     <div className="section-container text-center relative z-10">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mb-8"
-      >
+      <div className="mb-8 anim-fade-in-scale">
         <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-2 border-primary/30 glow-md">
-          <img src={portrait} alt={`${hero.firstName} ${hero.lastName}`} className="w-full h-full object-cover" />
+          <img src={portrait} alt={`${hero.firstName} ${hero.lastName}`} className="w-full h-full object-cover" width={144} height={144} />
         </div>
-      </motion.div>
+      </div>
 
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        className="text-5xl md:text-7xl font-bold font-heading mb-4"
-      >
+      <h1 className="text-5xl md:text-7xl font-bold font-heading mb-4 anim-fade-in-up" style={{ animationDelay: "0.2s" }}>
         {hero.firstName} <span className="text-gradient">{hero.lastName}</span>
-      </motion.h1>
+      </h1>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.35, duration: 0.5 }}
-        className="text-lg md:text-xl text-muted-foreground font-body mb-8"
-      >
+      <p className="text-lg md:text-xl text-muted-foreground font-body mb-8 anim-fade-in-up" style={{ animationDelay: "0.35s" }}>
         {hero.title}
-      </motion.p>
+      </p>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        className="flex gap-4 justify-center"
-      >
+      <div className="flex gap-4 justify-center anim-fade-in" style={{ animationDelay: "0.5s" }}>
         {socials.map(({ type, href, label }) => {
           const Icon = iconMap[type];
           return (
@@ -69,19 +48,17 @@ const HeroSection = () => (
             </a>
           );
         })}
-      </motion.div>
+      </div>
 
-      <motion.a
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.65, duration: 0.5 }}
+      <a
         href={hero.cvPath}
         download
-        className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-heading text-sm font-semibold hover:opacity-90 transition-opacity glow-sm"
+        className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-heading text-sm font-semibold hover:opacity-90 transition-opacity glow-sm anim-fade-in-up"
+        style={{ animationDelay: "0.65s" }}
       >
         <Download size={16} />
         Download CV
-      </motion.a>
+      </a>
     </div>
   </section>
 );

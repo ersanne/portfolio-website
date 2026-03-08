@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Sun, Moon } from "lucide-react";
 import { hero } from "@/data/portfolio";
 import { useTheme } from "@/hooks/use-theme";
@@ -14,19 +13,25 @@ const navItems = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggle } = useTheme();
+  const ticking = useRef(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking.current = false;
+        });
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ delay: 0.3, duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 anim-slide-down ${
         scrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm" : ""
       }`}
     >
@@ -53,7 +58,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

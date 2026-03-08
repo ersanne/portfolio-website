@@ -1,33 +1,27 @@
-import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import { useInView } from "@/hooks/use-in-view";
 import { projects } from "@/data/portfolio";
 
 const ProjectsSection = () => {
+  const { ref, inView } = useInView();
+
   if (projects.length === 0) return null;
 
   return (
     <section id="projects" className="section-container">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.5 }}
-      >
+      <div ref={ref} className={`animate-on-scroll ${inView ? "in-view" : ""}`}>
         <h2 className="text-3xl font-bold font-heading mb-2">
           <span className="text-primary font-normal text-lg mr-2">06.</span>Projects
         </h2>
         <div className="h-px w-24 bg-primary/30 mb-10" />
-      </motion.div>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project, i) => (
-          <motion.div
+          <div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.4 }}
-            className="bg-card rounded-xl p-6 border border-border/50 hover:border-primary/20 transition-colors flex flex-col"
+            className={`bg-card rounded-xl p-6 border border-border/50 hover:border-primary/20 transition-colors flex flex-col animate-on-scroll ${inView ? "in-view" : ""}`}
+            style={{ transitionDelay: `${i * 0.1}s` }}
           >
             <div className="flex items-start justify-between mb-3">
               <h3 className="font-heading font-semibold text-foreground">{project.title}</h3>
@@ -52,7 +46,7 @@ const ProjectsSection = () => {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

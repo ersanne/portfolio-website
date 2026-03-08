@@ -24,6 +24,11 @@ test: ## Run tests
 test-watch: ## Run tests in watch mode
 	npm run test:watch
 
+portrait: ## Convert originals/portrait.jpg → src/assets/erik-portrait.webp
+	@command -v cwebp >/dev/null 2>&1 || { echo "Install cwebp: brew install webp"; exit 1; }
+	cwebp -q 85 originals/portrait.jpg -o src/assets/erik-portrait.webp
+	@echo "✓ Portrait updated (originals/portrait.jpg → src/assets/erik-portrait.webp)"
+
 deploy: build ## Build and deploy to GitHub Pages
 	npx gh-pages -d dist
 
