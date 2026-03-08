@@ -1,1 +1,0 @@
-import{r as t}from"./index-HSBJ_0cw.js";function f(n="-100px"){const s=t.useRef(null),[o,u]=t.useState(!1);return t.useEffect(()=>{const e=s.current;if(!e)return;const r=new IntersectionObserver(([c])=>{c.isIntersecting&&(u(!0),r.unobserve(e))},{rootMargin:n});return r.observe(e),()=>r.disconnect()},[n]),{ref:s,inView:o}}export{f as u};
