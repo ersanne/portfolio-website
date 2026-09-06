@@ -1,0 +1,1 @@
+import{g as e,h as t}from"./index-Bn-EtsEa.js";var n=e(t(),1);function r(e=`-100px`){let t=(0,n.useRef)(null),[r,i]=(0,n.useState)(!1);return(0,n.useEffect)(()=>{let n=t.current;if(!n)return;let r=new IntersectionObserver(([e])=>{e.isIntersecting&&(i(!0),r.unobserve(n))},{rootMargin:e});return r.observe(n),()=>r.disconnect()},[e]),{ref:t,inView:r}}export{r as t};
