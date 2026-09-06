@@ -243,3 +243,7 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react,node,jetbrains+all
+
+# LaTeX build output (source files and bundled fonts live in cv/)
+cv/.build/
+public/Erik_Sanne_CV.pdf

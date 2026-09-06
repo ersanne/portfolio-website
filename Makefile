@@ -1,4 +1,4 @@
-.PHONY: install dev build preview lint test test-watch clean
+.PHONY: install dev build cv preview lint test test-watch clean
 
 install: ## Install dependencies
 	npm install
@@ -8,6 +8,9 @@ dev: ## Start development server
 
 build: ## Production build
 	npm run build
+
+cv: ## Compile the LaTeX CV into public/Erik_Sanne_CV.pdf
+	npm run build:cv
 
 build-dev: ## Development build
 	npm run build:dev

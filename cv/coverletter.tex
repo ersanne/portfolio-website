@@ -1,0 +1,143 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for Cover Letter
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Authors:
+% Claud D. Park <posquit0.bj@gmail.com>
+% Lars Richter <mail@ayeks.de>
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[circle,noedge,left]{./examples/profile}
+\name{Erik}{Sanne}
+\position{Software Engineer}
+\address{Mainzer Landstr. 146, 60327 Frankfurt am Main}
+
+\mobile{(+49) 160 98098449}
+\email{erik@eriksanne.com}
+\homepage{eriksanne.com}
+\github{ersanne}
+\linkedin{eriksanne}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+% \quote{``Be the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
+%	LETTER INFORMATION
+%	All of the below lines must be filled out
+%-------------------------------------------------------------------------------
+%Company
+\newcommand{\company}{Bloomberg}
+%Role
+\newcommand{\role}{Software Engineer - Market Oversight}
+\newcommand{\location}{Frankfurt am Main}
+
+% The company being applied to
+\recipient
+  {\company\ Recruitment Team}
+  {\\}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+% \lettertitle{Job Application for Software Engineer}
+% How the letter is opened
+\letteropening{Dear \company\ Recruitment Team,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+\letterenclosure[Attached]{Curriculum Vitae}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[R]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Erik Sanne~~~·~~~Cover Letter}
+  {}
+
+% Print the title with above letter informations
+\makelettertitle
+
+%-------------------------------------------------------------------------------
+%	LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+
+I am writing to you about the current \role\ position in \location. I believe that with my qualifications, skill set and experience I make an ideal candidate for this vacancy.
+
+I have a natural aptitude and passion for software engineering as proven throughout my time at Senacor Technologies AG and during my bachelor’s degree studies at the Edinburgh Napier University, where I have achieved a First Class in Software Engineering. I am confident in all aspects of the design, development and testing of computer software and I am keen to continue to develop my abilities. My technical skills include Java, Spring Boot, C++, C\#, JavaScript/TypesScript, VueJS, Python, Docker, AWS, SQL (DB2, Sybase, MySQL, Postgres) and MongoDB.
+
+To date, I have gained almost two years of professional experience in software development, at high-calibre organisations including Morgan Stanley, MarketAxess and my current employer, Senacor Technologies AG. This has significantly enhanced my commercial acumen and expertise. For example, during my internship at Morgan Stanley, I drove the design, migration and enhancement of an attractive software feature which led to client retention as well as the attraction of new clients. Moreover during my latest Project, I was able to take part in the solution design process and took responsibility for most of our infrastructure components. In addition, I have consistently demonstrated that I have excellent communication skills and I can successfully manage team relationships at all levels, remaining open to feedback and providing a first-class service to all internal and external stakeholders.
+
+During my internship at MarketAxess, I was able to gain an initial insight into the fixed income market and specifically fixed income electronic trading venues, which I am now keen to expand. I have been impressed with Bloomberg ever since I started taking an interest in Financial Services and after previously having the chance to interview for an internship at Bloomberg in London I am confident this is the ideal next step in my career.
+
+Thank you for taking the time to consider my application. I look forward to hearing from you in due course.
+
+\end{cvletter}
+
+
+%-------------------------------------------------------------------------------
+% Print the signature and enclosures with above letter informations
+\makeletterclosing
+
+\end{document}
