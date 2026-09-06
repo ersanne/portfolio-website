@@ -137,7 +137,7 @@ export const professionalExperience: Experience[] = [
         company: "Nextron Systems",
         location: "Frankfurt, Hesse, Germany",
         period: "Jun 2024 — Present",
-        description: "Building and leading backend development for ASGARD Management Center and Analysis Cockpit - Nextron's incident response and threat analysis platform, supporting scanning and response orchestration across up to one million endpoints.\n" +
+        description: "Building and leading backend development for Management Center and Analysis Cockpit - Nextron's incident response and threat analysis platform.\n" +
             "Driving architecture and technical design decisions, shaping SDLC processes, and contributing to product design. Mentoring engineers, establishing testing standards, and facilitating cross-team collaboration to raise code quality across the backend codebase.",
         skills: ["Go", "MariaDB", "Postgres", "Clickhouse", "gRPC", "Docker", "Kubernetes", "CI/CD"],
         roles: [

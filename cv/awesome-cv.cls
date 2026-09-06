@@ -676,7 +676,9 @@
   \center
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
-    \tabularx{\linewidth}{@{} r >{\raggedright\arraybackslash}X @{}}
+    % Start horizontal mode before skill text styling so color commands do not
+    % insert vertical material above the first line of the paragraph column.
+    \tabularx{\linewidth}{@{} r >{\raggedright\arraybackslash\leavevmode}X @{}}
 }{%
     \endtabularx
   \endcenter
