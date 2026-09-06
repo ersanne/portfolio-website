@@ -1,3 +1,4 @@
+import { TbBrandOpenai } from "react-icons/tb";
 // ============================================================
 // portfolio.ts — Single source of truth for all site content.
 // Edit this file to update your portfolio. No need to touch
@@ -32,7 +33,7 @@ import {
     SiGo, SiPython, SiKubernetes, SiGooglecloud, SiTerraform, SiDocker,
     SiOpenapiinitiative, SiHtml5, SiCss, SiJavascript, SiTypescript,
     SiPostgresql, SiMongodb, SiMysql,
-    SiGit, SiGitlab, SiArgo, SiHelm, SiOpenai,
+    SiGit, SiGitlab, SiArgo, SiHelm,
 } from "react-icons/si";
 import {TbApi, TbSql, TbNetwork, TbSitemap, TbSparkles, TbRobot} from "react-icons/tb";
 import {VscServerProcess} from "react-icons/vsc";
@@ -98,7 +99,7 @@ export const skillCategories: SkillCategory[] = [
     },
     {
         label: "AI", icon: BrainCircuit, skills: [
-            {name: "LLM Integration", icon: SiOpenai},
+            {name: "LLM Integration", icon: TbBrandOpenai},
             {name: "Prompt Engineering", icon: TbRobot},
             {name: "AI-Assisted Development", icon: TbSparkles},
         ]

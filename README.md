@@ -12,8 +12,7 @@ Feel free to use any of my code!
 
 ## Node.js
 
-Use Node.js 22 (version 22.13 or newer). The `.node-version` file selects the
-22.x release line. With fnm, run this from the repository root:
+Use Node.js 24.20.0 LTS. The `.node-version` file selects this release. With fnm, run this from the repository root:
 
 ```bash
 fnm install
@@ -22,6 +21,10 @@ npm ci
 ```
 
 Run `fnm use` in each new terminal before working on this project.
+Use npm and commit `package-lock.json` when changing dependencies.
+
+TypeScript is upgraded to 6.0.3, the newest release supported by
+`typescript-eslint` (which currently requires TypeScript below 6.1).
 
 ## LaTeX CV
 

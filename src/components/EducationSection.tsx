@@ -22,7 +22,7 @@ const EducationSection = () => {
           >
             <h3 className="font-heading font-semibold text-foreground mb-1">{edu.degree}</h3>
             {edu.grade && (
-              <span className="inline-block px-2 py-0.5 text-xs rounded bg-primary/10 text-primary font-heading mb-2">
+              <span className="inline-block px-2 py-0.5 text-xs rounded-[0.25rem] bg-primary/10 text-primary font-heading mb-2">
                 {edu.grade}
               </span>
             )}

@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
@@ -16,13 +17,14 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    tailwindcss(),
     mode === "development" && componentTagger(),
     viteCompression({ algorithm: "gzip" }),
     viteCompression({ algorithm: "brotliCompress", ext: ".br" }),
   ].filter(Boolean),
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
 }));

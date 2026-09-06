@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/vitest";
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -30,7 +30,7 @@ Object.defineProperty(window, "IntersectionObserver", {
   value: MockIntersectionObserver,
 });
 
-Object.defineProperty(global, "IntersectionObserver", {
+Object.defineProperty(globalThis, "IntersectionObserver", {
   writable: true,
   value: MockIntersectionObserver,
 });

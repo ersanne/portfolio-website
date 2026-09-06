@@ -36,7 +36,7 @@ const SkillsSection = () => {
                         key={skill.name}
                         className="inline-flex items-center gap-1.5 px-3 py-1 text-sm rounded-full bg-secondary text-secondary-foreground font-body hover:bg-primary/15 hover:text-primary transition-colors cursor-default"
                       >
-                        {Icon && <Icon size={13} className="flex-shrink-0" />}
+                        {Icon && <Icon size={13} className="shrink-0" />}
                         {skill.name}
                       </span>
                     );

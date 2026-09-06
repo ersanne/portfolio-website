@@ -13,11 +13,11 @@ const FooterSection = lazy(() => import("@/components/FooterSection"));
 
 const SectionSkeleton = () => (
   <div className="section-container animate-pulse">
-    <div className="h-8 w-48 bg-muted rounded mb-4" />
-    <div className="h-px w-24 bg-muted rounded mb-8" />
+    <div className="h-8 w-48 bg-muted rounded-[0.25rem] mb-4" />
+    <div className="h-px w-24 bg-muted rounded-[0.25rem] mb-8" />
     <div className="space-y-3">
-      <div className="h-4 w-full bg-muted rounded" />
-      <div className="h-4 w-3/4 bg-muted rounded" />
+      <div className="h-4 w-full bg-muted rounded-[0.25rem]" />
+      <div className="h-4 w-3/4 bg-muted rounded-[0.25rem]" />
     </div>
   </div>
 );

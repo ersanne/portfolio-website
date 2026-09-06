@@ -1,9 +1,11 @@
 import { Download } from "lucide-react";
 import portrait from "@/assets/erik-portrait.webp";
-import { Github, Linkedin, Twitter, Mail, type LucideIcon } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FiGithub as Github, FiLinkedin as Linkedin, FiTwitter as Twitter } from "react-icons/fi";
+import type { IconType } from "react-icons";
 import { hero, socials, type SocialType } from "@/data/portfolio";
 
-const iconMap: Record<SocialType, LucideIcon> = {
+const iconMap: Record<SocialType, IconType> = {
   github: Github,
   linkedin: Linkedin,
   twitter: Twitter,

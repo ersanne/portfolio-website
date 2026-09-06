@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FiGithub as Github } from "react-icons/fi";
 import { projects } from "@/data/portfolio";
 
 const ProjectsSection = () => {
@@ -31,7 +32,7 @@ const ProjectsSection = () => {
           >
             <div className="flex items-start justify-between mb-3">
               <h3 className="font-heading font-semibold text-foreground">{project.title}</h3>
-              <div className="flex gap-2 flex-shrink-0 ml-3">
+              <div className="flex gap-2 shrink-0 ml-3">
                 {project.github && (
                   <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors">
                     <Github size={16} />

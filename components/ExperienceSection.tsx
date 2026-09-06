@@ -53,7 +53,7 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
             <div className="text-sm text-muted-foreground space-y-1 mt-1">
               {exp.roles.map((role, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                   <div>
                     <span className="text-foreground font-medium">{role.title}</span>
                     <span className="text-muted-foreground text-xs ml-2">{role.period}</span>
@@ -66,7 +66,7 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
           <motion.div
             animate={{ rotate: open ? 180 : 0 }}
             transition={{ duration: 0.2 }}
-            className="text-muted-foreground flex-shrink-0"
+            className="text-muted-foreground shrink-0"
           >
             <ChevronDown size={16} />
           </motion.div>

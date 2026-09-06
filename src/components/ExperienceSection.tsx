@@ -52,7 +52,7 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
             <div className="text-sm text-muted-foreground space-y-1 mt-1">
               {exp.roles.map((role, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                   <div>
                     <span className="text-foreground font-medium">{role.title}</span>
                     <span className="text-muted-foreground text-xs ml-2">{role.period}</span>
@@ -62,7 +62,7 @@ const ExperienceCard = ({ exp, index, isLast }: { exp: Experience; index: number
               <p className="text-xs text-muted-foreground pl-3.5">{exp.location}</p>
             </div>
           </div>
-          <div className={`chevron-icon text-muted-foreground flex-shrink-0 ${open ? "open" : ""}`}>
+          <div className={`chevron-icon text-muted-foreground shrink-0 ${open ? "open" : ""}`}>
             <ChevronDown size={16} />
           </div>
         </div>

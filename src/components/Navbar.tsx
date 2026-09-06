@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 anim-slide-down ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm" : ""
+        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-xs" : ""
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
