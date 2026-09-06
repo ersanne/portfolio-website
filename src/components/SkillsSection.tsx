@@ -21,7 +21,7 @@ const SkillsSection = () => {
             return (
               <div
                 key={cat.label}
-                className={`grid grid-cols-[180px_1fr] items-center gap-3 animate-on-scroll ${inView ? "in-view" : ""}`}
+                className={`grid sm:grid-cols-[180px_1fr] items-start gap-3 border-b border-border/50 pb-5 animate-on-scroll ${inView ? "in-view" : ""}`}
                 style={{ transitionDelay: `${i * 0.08}s` }}
               >
                 <span className="inline-flex items-center gap-1.5 text-xs font-heading text-primary uppercase tracking-wider">
@@ -34,7 +34,7 @@ const SkillsSection = () => {
                     return (
                       <span
                         key={skill.name}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 text-sm rounded-full bg-secondary text-secondary-foreground font-body hover:bg-primary/15 hover:text-primary transition-colors cursor-default"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 text-sm rounded-md bg-secondary/50 text-secondary-foreground font-body hover:bg-primary/15 hover:text-primary transition-colors cursor-default"
                       >
                         {Icon && <Icon size={13} className="shrink-0" />}
                         {skill.name}

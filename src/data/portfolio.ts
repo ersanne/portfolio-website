@@ -9,6 +9,7 @@ export const hero = {
     firstName: "Erik",
     lastName: "Sanne",
     title: "Backend Tech Lead",
+    intro: "I build reliable backend systems and help engineering teams do their best work.",
     cvPath: "/Erik_Sanne_CV.pdf",
 };
 

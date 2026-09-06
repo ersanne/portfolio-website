@@ -7,7 +7,7 @@ const navItems = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -36,7 +36,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <a href="#" className="font-heading font-bold text-sm text-foreground hover:text-primary transition-colors">
+        <a href="#top" className="font-heading font-bold text-sm text-foreground hover:text-primary transition-colors">
           {hero.firstName}<span className="text-primary">.</span>
         </a>
         <div className="flex items-center gap-6">

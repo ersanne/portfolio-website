@@ -23,19 +23,23 @@ const SectionSkeleton = () => (
 );
 
 const Index = () => (
-  <div className="min-h-screen bg-background scroll-smooth">
+  <div id="top" className="min-h-screen bg-background">
     <Navbar />
-    <HeroSection />
-    <Suspense fallback={<SectionSkeleton />}>
-      <AboutSection />
-      <SkillsSection />
+    <main>
+      <HeroSection />
+      <Suspense fallback={<SectionSkeleton />}>
+        <AboutSection />
+        <SkillsSection />
 
-      <ExperienceSection />
-      <ProjectsSection />
-      <EducationSection />
-      <LanguagesSection />
-      <FooterSection />
-    </Suspense>
+        <ExperienceSection />
+        <ProjectsSection />
+        <div className="section-container background-details">
+          <EducationSection />
+          <LanguagesSection />
+        </div>
+      </Suspense>
+    </main>
+    <Suspense fallback={null}><FooterSection /></Suspense>
   </div>
 );
 

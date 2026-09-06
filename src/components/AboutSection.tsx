@@ -3,17 +3,17 @@ import { about } from "@/data/portfolio";
 
 const AboutSection = () => {
   const { ref, inView } = useInView();
-
   return (
-    <section id="about" className="section-container">
-      <div ref={ref} className={`animate-on-scroll ${inView ? "in-view" : ""}`}>
-        <h2 className="text-3xl font-bold font-heading mb-2">
-          <span className="text-primary font-normal text-lg mr-2">01.</span>About Me
-        </h2>
-        <div className="h-px w-24 bg-primary/30 mb-8" />
-        <p className="text-muted-foreground leading-relaxed max-w-2xl text-lg">
-          {about}
-        </p>
+    <section id="about" className="about-section">
+      <div ref={ref} className={`section-container about-layout animate-on-scroll ${inView ? "in-view" : ""}`}>
+        <div>
+          <p className="eyebrow mb-4">01 / <span>About Me</span></p>
+          <h2 className="editorial-heading">Good systems.<br /><span className="text-muted-foreground">Great people.</span></h2>
+        </div>
+        <div>
+          <p className="text-muted-foreground leading-relaxed text-lg">{about}</p>
+          <div className="about-notes"><span>Go & distributed systems</span><span>Architecture & mentoring</span></div>
+        </div>
       </div>
     </section>
   );
