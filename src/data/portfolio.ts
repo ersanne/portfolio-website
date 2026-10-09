@@ -184,7 +184,7 @@ export const professionalExperience: Experience[] = [
         period: "Feb 2021 — Apr 2022",
         roles: [
             {
-                title: "Software Engineer",
+                title: "Full-Stack Developer",
                 period: "Feb 2021 — Apr 2022",
                 description: "Designed software solutions for Banking & Finance clients. Led the design of a company-wide webhook system using AWS Lambda. " +
                     "Designed and implemented a JSON data store with custom data ingestion, and built supporting infrastructure in RedHat OpenShift with Azure.",
@@ -197,7 +197,7 @@ export const professionalExperience: Experience[] = [
 export const earlyCareer: Experience[] = [
     {
         company: "Edinburgh Napier University",
-        location: "Edinburgh, UK",
+        location: "Remote, UK",
         period: "Sep 2020 — Dec 2020",
         roles: [{
             title: "Lab Demonstrator",
@@ -235,7 +235,7 @@ export const earlyCareer: Experience[] = [
         location: "Glasgow, UK",
         period: "Jun 2018 — May 2019",
         roles: [{
-            title: "Industrial Placement — Application Development",
+            title: "Industrial Placement in Application Development",
             period: "Jun 2018 — May 2019",
             description: "Completed a 12-month placement split between Equity Swaps Trading and Development Environment teams.\n" +
                 "Performance-tuned a trading system component achieving 70-80x performance increase.\n" +

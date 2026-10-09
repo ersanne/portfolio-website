@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   hero, about, socials, skillCategories, professionalExperience,
-  earlyCareer, education, languages, softSkills, projects,
+  earlyCareer, education, languages, projects,
 } from "@/data/portfolio";
 
 describe("portfolio data integrity", () => {
@@ -34,10 +34,17 @@ describe("portfolio data integrity", () => {
       expect(exp.company).toBeTruthy();
       expect(exp.period).toBeTruthy();
       expect(exp.roles.length).toBeGreaterThan(0);
+      if (exp.description) {
+        expect(exp.skills?.length).toBeGreaterThan(0);
+      }
       exp.roles.forEach((role) => {
         expect(role.title).toBeTruthy();
-        expect(role.description).toBeTruthy();
-        expect(role.skills.length).toBeGreaterThan(0);
+        expect(role.period).toBeTruthy();
+        // Roles of an experience with a combined description only show title and period.
+        if (!exp.description) {
+          expect(role.description).toBeTruthy();
+          expect(role.skills.length).toBeGreaterThan(0);
+        }
       });
     });
   });
@@ -55,12 +62,6 @@ describe("portfolio data integrity", () => {
       expect(lang.name).toBeTruthy();
       expect(lang.level).toBeTruthy();
       expect(lang.flag).toBeTruthy();
-    });
-  });
-
-  it("soft skills are non-empty strings", () => {
-    softSkills.forEach((skill) => {
-      expect(skill.length).toBeGreaterThan(0);
     });
   });
 

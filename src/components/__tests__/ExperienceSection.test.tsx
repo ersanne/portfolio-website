@@ -21,7 +21,9 @@ describe("ExperienceSection", () => {
     const firstExp = professionalExperience[0];
     const card = screen.getByText(firstExp.company).closest("[class*=bg-card]")!;
     fireEvent.click(card);
-    expect(screen.getByText(firstExp.roles[0].description)).toBeInTheDocument();
+    const details = firstExp.description ?? firstExp.roles[0].description;
+    // getByText collapses the newlines the panel renders with whitespace-pre-line.
+    expect(screen.getByText(details.split("\n")[0], { exact: false })).toBeInTheDocument();
   });
 
   it("renders sub-headings for professional and early career", () => {
