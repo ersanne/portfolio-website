@@ -10,23 +10,16 @@ const pdfPath = fileURLToPath(new URL("../public/Erik_Sanne_CV.pdf", import.meta
 mkdirSync(outputDirectory, { recursive: true });
 
 const result = spawnSync(
-  "latexmk",
-  [
-    "-xelatex",
-    "-interaction=nonstopmode",
-    "-halt-on-error",
-    "-file-line-error",
-    "-outdir=.build",
-    "cv.tex",
-  ],
+  "tectonic",
+  ["-X", "compile", "--keep-logs", "--outdir", ".build", "cv.tex"],
   { cwd: cvDirectory, stdio: "inherit" },
 );
 
 if (result.error) {
   console.error(
     ["ENOENT", "EACCES"].includes(result.error.code)
-      ? "Could not execute latexmk. Install latexmk and XeLaTeX and ensure they are accessible on PATH. See README.md for installation instructions."
-      : `Could not start latexmk: ${result.error.message}`,
+      ? "Could not execute tectonic. Run `mise install` and ensure mise is activated or use `mise exec --`. See README.md for details."
+      : `Could not start tectonic: ${result.error.message}`,
   );
   process.exit(1);
 }

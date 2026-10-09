@@ -12,15 +12,20 @@ Feel free to use any of my code!
 
 ## Node.js
 
-Use Node.js 24.20.0 LTS. The `.node-version` file selects this release. With fnm, run this from the repository root:
+Use Node.js 24.20.0 LTS. [mise](https://mise.jdx.dev) pins this release in
+`mise.toml`. From the repository root:
 
 ```bash
-fnm install
-fnm use
+mise trust
+mise install
 npm ci
 ```
 
-Run `fnm use` in each new terminal before working on this project.
+With mise activated in your shell, the pinned Node.js is selected automatically
+when you enter the project directory; otherwise prefix commands with `mise exec --`.
+
+Common workflows are defined as mise tasks in `mise.toml`. Run `mise tasks` to
+list them and `mise run <task>` (e.g. `mise run dev`) to run one.
 Use npm and commit `package-lock.json` when changing dependencies.
 
 TypeScript is upgraded to 6.0.3, the newest release supported by
@@ -33,21 +38,15 @@ layout, and `cv/cv/skills.tex`, `cv/cv/experience.tex`, and `cv/cv/education.tex
 for the sections currently included. The `resume/` files and `coverletter.tex`
 are separate template content and are not built by the website.
 
-The Awesome CV template requires **XeLaTeX** and **latexmk**, plus the
-FontAwesome and Source Sans Pro LaTeX packages. On Ubuntu / WSL:
-
-```bash
-sudo apt-get update
-sudo apt-get install --no-install-recommends latexmk texlive-xetex texlive-fonts-recommended texlive-fonts-extra
-```
-
-On other systems, install TeX Live or MacTeX with these tools and packages.
-The Ubuntu font package is large; allow sufficient disk space for TeX Live.
+The CV is compiled with [Tectonic](https://tectonic-typesetting.github.io), a
+XeTeX-based engine that `mise install` provides. No TeX Live installation is
+needed: Tectonic downloads the required LaTeX packages on the first build and
+caches them, so that build needs network access.
 
 From the repository root:
 
 ```bash
-npm run build:cv  # Compile only the CV (also available as make cv)
+npm run build:cv  # Compile only the CV (also available as mise run cv)
 npm run dev       # Serve the website, including the generated PDF
 npm run build     # Rebuild the CV, then build the production website
 ```

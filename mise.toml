@@ -1,0 +1,65 @@
+[tools]
+node = "24.20.0"
+# XeTeX-based engine for the CV; fetches LaTeX packages on demand.
+"github:tectonic-typesetting/tectonic" = "0.17.0"
+
+# libwebp publishes prebuilt binaries outside GitHub releases (no Windows build).
+[tools."http:cwebp"]
+version = "1.6.0"
+bin_path = "bin"
+strip_components = 1
+
+[tools."http:cwebp".platforms]
+macos-arm64 = { url = "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-{{version}}-mac-arm64.tar.gz" }
+macos-x64 = { url = "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-{{version}}-mac-x86-64.tar.gz" }
+linux-x64 = { url = "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-{{version}}-linux-x86-64.tar.gz" }
+linux-arm64 = { url = "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-{{version}}-linux-aarch64.tar.gz" }
+
+[tasks.install]
+description = "Install dependencies"
+run = "npm install"
+
+[tasks.dev]
+description = "Start development server"
+run = "npm run dev"
+
+[tasks.build]
+description = "Production build"
+run = "npm run build"
+
+[tasks.cv]
+description = "Compile the LaTeX CV into public/Erik_Sanne_CV.pdf"
+run = "npm run build:cv"
+
+[tasks.build-dev]
+description = "Development build"
+run = "npm run build:dev"
+
+[tasks.preview]
+description = "Preview production build"
+run = "npm run preview"
+
+[tasks.lint]
+description = "Run ESLint"
+run = "npm run lint"
+
+[tasks.test]
+description = "Run tests"
+run = "npm run test"
+
+[tasks.test-watch]
+description = "Run tests in watch mode"
+run = "npm run test:watch"
+
+[tasks.portrait]
+description = "Convert originals/portrait.jpg → src/assets/erik-portrait.webp"
+run = "cwebp -q 85 originals/portrait.jpg -o src/assets/erik-portrait.webp"
+
+[tasks.deploy]
+description = "Build and deploy to GitHub Pages"
+depends = ["build"]
+run = "npx gh-pages -d dist"
+
+[tasks.clean]
+description = "Remove build artifacts and node_modules"
+run = "rm -rf dist node_modules"
